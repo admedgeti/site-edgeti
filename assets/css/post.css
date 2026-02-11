@@ -20,6 +20,14 @@
    ESTILOS DO ARTIGO (Conteúdo)
    =========================== */
 
+   .post-section {
+    /* O padding garante que o título não nasça escondido atrás do menu */
+    padding-top: 140px !important; /* Ajuste conforme a altura do seu menu */
+    
+    display: block;
+    position: relative;
+    z-index: 0 !important; /* Garante que fique ABAIXO do menu (que é 9999) */
+}
 /* Container do Cabeçalho (Meta + Título) */
 .post-header {
     display: block !important; /* Garante que seja um bloco sólido */
