@@ -186,9 +186,31 @@
     background-color: transparent;
 }
 
-/* Cabeçalho do Post */
+/* --- CORREÇÃO URGENTE: SOBREPOSIÇÃO DO TÍTULO NO POST --- */
+
+/* 1. Garante que o container do cabeçalho ocupe a altura necessária e dê espaço abaixo */
 .post-header {
-    margin-bottom: 2rem;
+    display: block !important;
+    height: auto !important; /* O container cresce conforme o texto dentro dele */
+    margin-bottom: 4rem !important; /* Aumenta bastante o espaço abaixo do cabeçalho inteiro */
+    overflow: visible !important; /* Garante que nada seja cortado */
+}
+
+/* 2. Adiciona espaço diretamente abaixo do H1 para empurrar a data/imagem */
+.post-title {
+    display: block !important;
+    position: relative !important; /* Garante que ele não esteja com posição absoluta "flutuando" */
+    margin-top: 1rem !important;
+    margin-bottom: 2rem !important; /* Espaço extra obrigatório abaixo do título */
+    padding-bottom: 1rem; /* Um pouco de respiro interno */
+    line-height: 1.3 !important; /* Garante que as linhas do título não fiquem grudadas */
+}
+
+/* 3. Segurança extra para a imagem não subir */
+.post-featured-image {
+    clear: both; /* Garante que a imagem fique abaixo de elementos flutuantes anteriores */
+    margin-top: 2rem !important;
+    display: block;
 }
 
 .post-meta {
@@ -199,21 +221,6 @@
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-}
-
-.post-title {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    color: #fff; /* Branco para fundo dark */
-    margin-top: 0.5rem;
-}
-
-/* Imagem de Capa */
-.post-featured-image {
-    margin-bottom: 2.5rem;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .post-featured-image img {
