@@ -22,7 +22,7 @@
 
    .post-section {
     /* O padding garante que o título não nasça escondido atrás do menu */
-    padding-top: 140px !important; /* Ajuste conforme a altura do seu menu */
+    padding-top: 30px !important; /* Ajuste conforme a altura do seu menu */
     
     display: block;
     position: relative;
