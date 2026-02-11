@@ -1,38 +1,39 @@
+/* css/post.css - Versão Final Limpa */
+
 /* ===========================
    LAYOUT PRINCIPAL
    =========================== */
+
+/* Correção para o Menu Fixo (Empurra o conteúdo para baixo) */
+.post-section {
+    display: block;
+    position: relative;
+    padding-top: 140px !important; /* Ajuste se o menu cobrir o topo */
+    z-index: 0 !important; /* Garante que fique ABAIXO do menu (que é 9999) */
+}
 
 /* Grid: Conteúdo (Esquerda) + Sidebar (Direita) */
 .post-grid {
     display: grid;
     grid-template-columns: 2fr 1fr; /* 2 partes texto, 1 parte lateral */
     gap: 4rem;
-    
-    /* CORREÇÃO DO HEADER: */
-    margin-top: 100px; /* Empurra todo o post para baixo para não ficar atrás do menu */
+    margin-top: 0 !important;
     padding-top: 2rem;
     padding-bottom: 4rem;
-    
     align-items: start;
 }
 
 /* ===========================
-   ESTILOS DO ARTIGO (Conteúdo)
+   ESTILOS DO CABEÇALHO (Título, Data, Capa)
    =========================== */
 
-   .post-section {
-    /* O padding garante que o título não nasça escondido atrás do menu */
-    display: block;
-    position: relative;
-    z-index: 0 !important; /* Garante que fique ABAIXO do menu (que é 9999) */
-}
-/* Container do Cabeçalho (Meta + Título) */
+/* Container do Cabeçalho */
 .post-header {
-    display: block !important; /* Garante que seja um bloco sólido */
-    position: relative !important; 
+    display: block !important;
+    position: relative !important;
     width: 100%;
-    height: auto !important; /* A altura cresce conforme o texto */
-    margin-bottom: 3rem !important; /* Empurra a imagem para baixo com força */
+    height: auto !important;
+    margin-bottom: 3rem !important; /* Espaço entre título e imagem */
     clear: both;
 }
 
@@ -52,16 +53,11 @@
 .post-title {
     display: block !important;
     position: relative !important;
-    
-    /* Visual */
     font-size: 2.5rem;
-    line-height: 1.3; /* Espaçamento entre linhas do título */
+    line-height: 1.3;
     color: #ffffff;
-    
-    /* Espaçamento */
     margin-top: 0.5rem;
-    margin-bottom: 0; /* A margem é controlada pelo .post-header pai */
-    
+    margin-bottom: 0;
     word-wrap: break-word;
 }
 
@@ -74,9 +70,9 @@
     max-height: 550px;
     overflow: hidden;
     margin-top: 0;
-    margin-bottom: 3rem; /* Espaço para o texto abaixo */
+    margin-bottom: 3rem; /* Espaço para o texto começar */
     border-radius: 8px;
-    clear: both; /* Garante que fique abaixo de tudo */
+    clear: both;
 }
 
 .post-featured-image img {
@@ -87,14 +83,13 @@
 }
 
 /* ===========================
-   TIPOGRAFIA DO CORPO (Texto)
+   TIPOGRAFIA DO CORPO (O Texto do Post)
    =========================== */
 
-/* O JS usa a classe 'post-body-typography' */
 .post-body-typography {
     font-size: 1.125rem; /* 18px */
     line-height: 1.8;
-    color: #e0e0e0; /* Cinza claro para leitura em fundo escuro */
+    color: #e0e0e0;
     display: block;
     position: relative;
 }
@@ -118,18 +113,43 @@
     color: #f0f0f0;
 }
 
+/* --- Listas (Bolinhas e Números) --- */
 .post-body-typography ul, 
 .post-body-typography ol {
     margin-bottom: 1.5rem;
-    padding-left: 1.5rem;
+    padding-left: 2rem !important; /* Recuo obrigatório */
     color: #d0d0d0;
+    list-style-position: outside;
+}
+
+.post-body-typography ul {
+    list-style-type: disc !important; /* Bolinha sólida */
+}
+
+.post-body-typography ol {
+    list-style-type: decimal !important; /* 1, 2, 3 */
 }
 
 .post-body-typography li {
+    display: list-item !important;
     margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
 }
 
-/* Imagens dentro do texto (se houver no Markdown) */
+/* --- Links (Azul Neon) --- */
+.post-body-typography a {
+    color: #00d4ff !important;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.post-body-typography a:hover {
+    color: #80eaff !important;
+    text-decoration: none;
+}
+
+/* Imagens no meio do texto */
 .post-body-typography img {
     max-width: 100%;
     height: auto;
@@ -138,12 +158,12 @@
 }
 
 /* ===========================
-   SIDEBAR (Lateral)
+   SIDEBAR (Lateral Direita)
    =========================== */
 
 .post-sidebar {
-    position: sticky; /* Faz a sidebar acompanhar o scroll */
-    top: 100px; /* Distância do topo quando travar */
+    position: sticky;
+    top: 140px; /* Trava ao rolar, respeitando o header */
     height: fit-content;
 }
 
@@ -158,7 +178,7 @@
 .sidebar-widget h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #111; /* Texto escuro pois o fundo do widget é claro */
+    color: #111;
 }
 
 .sidebar-widget p {
@@ -207,13 +227,13 @@
    =========================== */
 @media (max-width: 900px) {
     .post-grid {
-        grid-template-columns: 1fr; /* Vira uma coluna só */
+        grid-template-columns: 1fr; /* Uma coluna só */
         gap: 3rem;
     }
 
     .post-sidebar {
-        position: static; /* Remove o sticky no celular */
-        order: 2; /* Joga para baixo do conteúdo */
+        position: static;
+        order: 2; /* Sidebar vai pro final */
         margin-top: 2rem;
     }
 
