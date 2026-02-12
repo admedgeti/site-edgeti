@@ -152,11 +152,21 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // 1. Pega os parâmetros da URL
+        // 1. CAPTURA DO SLUG (Suporta URL Limpa e Formato Antigo)
         const params = new URLSearchParams(window.location.search);
-        const slug = params.get('slug');
+        let slug = params.get('slug');
         const id = params.get('id');
         const contentArea = document.getElementById('post-content-area');
+
+        // Lógica para URL Limpa: Se não houver ?slug=, pega o que vem após a última "/"
+        if (!slug && !id) {
+            const path = window.location.pathname;
+            // Remove barras extras e pega o último segmento
+            const segments = path.split('/').filter(s => s !== '');
+            if (segments.length > 0) {
+                slug = segments[segments.length - 1];
+            }
+        }
 
         // URL da API
         let apiUrl = '';
@@ -191,30 +201,24 @@
                 }
 
                 // ===============================================
-                // ATUALIZAÇÃO DE SEO (META TAGS) - NOVO!
+                // ATUALIZAÇÃO DE SEO (META TAGS)
                 // ===============================================
-                
-                // 1. Título da Aba
-                document.title = `${post.title} - Blog EDGETI`;
+                document.title = `${post.title} - Blog Edge TI`;
 
-                // 2. Descrição (Usa o campo seo_description se existir, ou o começo do texto)
                 const metaDesc = document.querySelector('meta[name="description"]');
                 const ogDesc = document.querySelector('meta[property="og:description"]');
-                const descriptionText = post.seo_description || "Artigo sobre tecnologia e inovação da EdgeTI.";
+                const descriptionText = post.seo_description || "Artigo sobre tecnologia e inovação da Edge TI.";
                 if(metaDesc) metaDesc.setAttribute('content', descriptionText);
                 if(ogDesc) ogDesc.setAttribute('content', descriptionText);
 
-                // 3. Título Open Graph
                 const ogTitle = document.querySelector('meta[property="og:title"]');
                 if(ogTitle) ogTitle.setAttribute('content', post.title);
 
-                // 4. URL
                 const ogUrl = document.querySelector('meta[property="og:url"]');
                 if(ogUrl) ogUrl.setAttribute('content', window.location.href);
 
-                // 5. Imagem de Capa (Essencial para WhatsApp)
                 const ogImage = document.querySelector('meta[property="og:image"]');
-                let imageUrl = 'https://edgeti.com.br/assets/images/LOGO_FUNDO_TRANSPARENTE.png'; // Fallback
+                let imageUrl = 'https://edgeti.com.br/assets/images/LOGO_FUNDO_TRANSPARENTE.png'; 
                 
                 const imageField = post.cover_image || post.capa || post.image || post.imagem;
                 
@@ -224,38 +228,30 @@
                     
                     if (imgData && imgData.url) {
                         const rawUrl = imgData.url;
-                        // Garante URL absoluta (https://...)
                         imageUrl = rawUrl.startsWith('http') ? rawUrl : `https://edgeti.com.br${rawUrl}`;
                     }
                 }
                 
                 if(ogImage) ogImage.setAttribute('content', imageUrl);
-                // ===============================================
-
 
                 // --- 3. MONTAR O CONTEÚDO HTML VISUAL ---
-                
-                // DATA
                 const dateStr = new Date(post.publishedAt).toLocaleDateString('pt-BR', {
                     day: '2-digit', month: 'long', year: 'numeric'
                 });
 
-                // IMAGEM VISUAL (HTML)
                 let imgHtml = '';
                 if (imageUrl !== 'https://edgeti.com.br/assets/images/LOGO_FUNDO_TRANSPARENTE.png') {
                      imgHtml = `<div class="post-featured-image"><img src="${imageUrl}" alt="${post.title}"></div>`;
                 }
 
-                // CONTEÚDO
                 let bodyHtml = '';
                 const content = post.content || post.conteudo;
 
                 if (!content) {
                     bodyHtml = '<p>Sem conteúdo.</p>';
                 } else if (typeof content === 'string') {
-                    bodyHtml = content.replace(/\n/g, '<br>'); // Fallback simples
+                    bodyHtml = content.replace(/\n/g, '<br>'); 
                 } else if (Array.isArray(content)) {
-                    // Strapi v5 Blocks
                     bodyHtml = content.map(block => {
                         if (block.type === 'paragraph') {
                             const text = block.children.map(c => {
@@ -293,9 +289,7 @@
                         <span class="post-meta"><i class="ph ph-calendar-blank"></i> ${dateStr}</span>
                         <h1 class="post-title">${post.title}</h1>
                     </header>
-                    
                     ${imgHtml}
-                    
                     <div class="post-body-typography">
                         ${bodyHtml}
                     </div>
@@ -306,7 +300,7 @@
                 contentArea.innerHTML = `<p class="error-msg">Erro ao carregar post: ${err.message}</p>`;
             });
     });
-    </script>
+</script>
 
 </body>
 </html>
