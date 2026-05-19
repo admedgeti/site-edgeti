@@ -77,11 +77,13 @@
     margin-bottom: 1.2rem;
     font-weight: 600;
     letter-spacing: 0.5px;
+    
 }
 
-.footer-logo {
+.footer-logo img{
     font-size: 1.8rem !important;
     letter-spacing: -1px;
+    max-width: 150px;
 }
 
 .footer-about p {
@@ -106,6 +108,9 @@
     align-items: flex-start;
     gap: 1rem;
     color: #c6c6c6;
+}
+.footer-contact h3 {
+   align-self: center;
 }
 
 /* --- Ícones --- */

@@ -10,47 +10,6 @@ header {
     z-index: 1000;
 }
 
-.top-bar {
-    background-color: #0d0e0e;
-    border-bottom: 1px solid #1b1b1b;
-    padding: 0.5rem 0;
-    font-size: 0.85rem;
-}
-
-.top-bar-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.top-bar-left a {
-    color: #b3b3b3;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.3s;
-}
-
-.top-bar-left a:hover {
-    color: #ffffff;
-}
-
-.top-bar-blog-link {
-    background: linear-gradient(135deg, var(--primary-color, #0070f3), #00a4ff);
-    color: #ffffff !important;
-    padding: 0.3rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.2s, filter 0.2s;
-    display: inline-block;
-}
-
-.top-bar-blog-link:hover {
-    transform: translateY(-1px);
-    filter: brightness(1.1);
-}
 
 .header-main {
     height: 4.5rem;
