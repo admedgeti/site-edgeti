@@ -21,19 +21,19 @@ class MainHeader extends HTMLElement {
                         <!-- Painel do Mega Menu -->
                         <div class="mega-menu">
                             <div class="mega-menu-grid">
-                                <a href="informatica" class="mega-menu-card">
+                                <a href="informatica-geral" class="mega-menu-card">
                                     <h4>Informática</h4>
                                     <p>Suporte ágil e eficiente para o dia a dia da sua empresa.</p>
                                 </a>
-                                <a href="redes" class="mega-menu-card">
+                                <a href="redes-geral" class="mega-menu-card">
                                     <h4>Redes e Servidores</h4>
                                     <p>A base sólida para a conectividade do seu negócio.</p>
                                 </a>
-                                <a href="seguranca" class="mega-menu-card">
+                                <a href="seguranca-geral" class="mega-menu-card">
                                     <h4>Segurança da Informação</h4>
                                     <p>Protegendo seu ativo mais valioso: seus dados.</p>
                                 </a>
-                                <a href="cloud" class="mega-menu-card">
+                                <a href="cloud-geral" class="mega-menu-card">
                                     <h4>Cloud (Nuvem)</h4>
                                     <p>Flexibilidade e escalabilidade para o futuro do negócio.</p>
                                 </a>
@@ -65,10 +65,10 @@ class MainHeader extends HTMLElement {
                     <a href="/#servicos">Soluções</a>
                     <!-- Submenu Mobile -->
                     <ul class="mobile-submenu">
-                        <li><a href="informatica">- Informática</a></li>
-                        <li><a href="redes">- Redes e Servidores</a></li>
-                        <li><a href="seguranca">- Segurança da Informação</a></li>
-                        <li><a href="cloud">- Cloud (Nuvem)</a></li>
+                        <li><a href="informatica-geral">- Informática</a></li>
+                        <li><a href="redes-geral">- Redes e Servidores</a></li>
+                        <li><a href="seguranca-geral">- Segurança da Informação</a></li>
+                        <li><a href="cloud-geral">- Cloud (Nuvem)</a></li>
                         <li><a href="suporte-tecnico">- Suporte Técnico</a></li>
                     </ul>
                 </li>
