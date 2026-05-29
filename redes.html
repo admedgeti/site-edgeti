@@ -1,242 +1,238 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suporte de Informática e TI - Edge TI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infraestrutura de Redes e Servidores | Edge TI</title>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/cta.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <link rel="icon" type="image/png" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box !important; }
+    body { background-color: #0d0e0e; color: #e2e8f0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
 
-    <link rel="apple-touch-icon" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+    .breadcrumb { max-width: 1200px; margin: 2rem auto 0 auto; padding: 0 2rem; font-size: 0.9rem; color: #8a949d; }
+    .breadcrumb a { color: #00a4ff; text-decoration: none; transition: color 0.3s; }
+    .breadcrumb a:hover { color: #00ff66; }
+    .breadcrumb span { margin: 0 0.5rem; }
 
-    <link rel="shortcut icon" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+    .page-header-spacing { padding: 3rem 2rem 2rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; }
+    .badge-category { background: rgba(15, 98, 254, 0.15); border: 1px solid rgba(15, 98, 254, 0.4); color: #0f62fe; padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 1.5rem; }
+    .page-header-spacing h1 { font-size: 3rem; font-weight: 800; color: #ffffff; letter-spacing: -1px; margin-bottom: 1rem; line-height: 1.2; }
+    .page-header-spacing p { font-size: 1.2rem; color: #c1c7cd; line-height: 1.6; }
+
+    .content-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     
-    <meta name="description" content="Suporte técnico especializado em TI para empresas. Outsourcing, manutenção de computadores e helpdesk ágil. Reduza o tempo de inatividade da sua empresa.">
+    /* Grid Principal da Página */
+    .service-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; background: #121314; padding: 4rem; border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); margin-bottom: 4rem; }
+    .text-block h2 { font-size: 2rem; color: #ffffff; font-weight: 700; margin-bottom: 1.2rem; }
+    .text-block p { font-size: 1.05rem; color: #a8b0b8; line-height: 1.8; margin-bottom: 1.5rem; }
 
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/solucoes.css">
+    /* --- GRID DE SUBPÁGINAS / LINKS --- */
+    .subservices-title { font-size: 2rem; color: #ffffff; font-weight: 700; margin-bottom: 2rem; text-align: center; }
+    .subservices-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 4rem; }
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    .subservice-card { background: #121314; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; padding: 2rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .subservice-card:hover { transform: translateY(-5px); background: #16181b; border-color: rgba(15, 98, 254, 0.4); box-shadow: 0 15px 30px rgba(15, 98, 254, 0.1); }
+    
+    .card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .card-header i { font-size: 2.5rem; color: #00a4ff; }
+    .card-header h3 { font-size: 1.3rem; color: #ffffff; font-weight: 600; margin: 0; }
+    .subservice-card p { font-size: 0.95rem; color: #a8b0b8; line-height: 1.6; margin: 0 0 1.5rem 0; }
+    
+    .card-link-text { font-size: 0.9rem; font-weight: 700; color: #00a4ff; display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+    .subservice-card:hover .card-link-text { color: #00ff66; }
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10853852987"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-10853852987');
-    </script>
-    <meta name="adopt-website-id" content="341ba5d4-b045-4bab-9246-e22ac7ddb548" />
-    <script src="//tag.goadopt.io/injector.js?website_code=341ba5d4-b045-4bab-9246-e22ac7ddb548" 
-            class="adopt-injector"
-            data-cookie-domain="edgeti.com.br">
-    </script>
+    /* --- ANIMAÇÃO CENTRAL: SERVER RACK --- */
+    .visual-side { display: flex; align-items: center; justify-content: center; position: relative; height: 350px; }
+    .server-rack-page { width: 240px; display: flex; flex-direction: column; gap: 12px; }
+    .server-blade-page { height: 45px; background: #21262e; border-radius: 6px; border-left: 6px solid #0f62fe; display: flex; align-items: center; justify-content: flex-end; padding-right: 20px; gap: 10px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); }
+    .led-page { width: 10px; height: 10px; border-radius: 50%; background: #00ff66; box-shadow: 0 0 12px #00ff66; }
+    .server-blade-page:nth-child(2) .led-page { background: #00a4ff; box-shadow: 0 0 12px #00a4ff; }
+    .server-blade-page:nth-child(3) .led-page { animation: ledBlinkPage 0.5s infinite alternate; }
+    @keyframes ledBlinkPage { 0% { opacity: 0.2; } 100% { opacity: 1; box-shadow: 0 0 15px #00ff66; } }
+
+    /* --- VISUAL PERFORMANCE CONTRASTE --- */
+    .stats-visual { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center; height: 100%; }
+    .stat-card { background: #16181b; border: 1px solid rgba(255,255,255,0.06); border-left: 4px solid #00ff66; border-radius: 16px; padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; width: 100%; max-width: 360px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); animation: floatStatPage 5s infinite ease-in-out; }
+    .stat-card.blue-card { border-left-color: #00a4ff; animation-delay: 2.5s; }
+    .stat-info h4 { margin: 0 0 0.3rem 0; color: #ffffff; font-size: 1.15rem; font-weight: 600; }
+    .stat-info p { margin: 0; color: #a8b0b8; font-size: 0.95rem; line-height: 1.4; }
+    @keyframes floatStatPage { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    @media (max-width: 992px) {
+      .service-detail-grid, .subservices-grid { grid-template-columns: 1fr; }
+      .visual-side { order: -1; height: 250px; }
+      .page-header-spacing h1 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
+
 <body>
-
-   <header id="header">
-        <div class="container header-flex">
-            <a href="/" class="logo">
-                <img src="/assets/images/LOGO FUNDO TRANSPARENTE.png" alt="Edgeti Logo" />
-            </a>
-            <nav class="nav-desktop">
-                <ul class="nav-list">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/#servicos">Soluções</a></li>
-                    <li><a href="blog" class="active">Blog</a></li>
-                    <li><a href="/#vamos-conversar">Contato</a></li>
-                    <li><a href="central-privacidade">Central de Privacidade</a></li>
-                </ul>
-            </nav>
-            <button id="btn-mobile" aria-label="Abrir Menu">
-                <i class="ph ph-list"></i>
-            </button>
-        </div>
-        <div id="menu-mobile" class="menu-mobile-container">
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/#servicos">Soluções</a></li>
-                    <li><a href="blog">Blog</a></li>
-                    <li><a href="/#vamos-conversar">Contato</a></li>
-                    <li><a href="central-privacidade">Central de Privacidade</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-    <section class="solution-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Infraestrutura de Redes</h1>
-                <p class="hero-subtitle">Conectividade estável, cabeamento estruturado e servidores configurados para alta performance.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section solution-content">
-        <div class="container solution-grid">
-            <div class="solution-text">
-                <h2>A base da sua empresa digital.</h2>
-                <p>Uma rede lenta ou mal estruturada gargala toda a produtividade da sua equipe. A EDGETI projeta e executa infraestruturas de rede robustas, desde o cabeamento estruturado até a configuração avançada de roteadores e switches.</p>
-                <p>Configuramos servidores Windows e Linux, gerenciamos permissões de acesso e garantimos que o Wi-Fi corporativo funcione em todos os cantos do escritório com segurança.</p>
-                <ul style="margin-top: 1rem; list-style: none;">
-                    <li><i class="ph ph-check-circle" style="color:var(--primary-color)"></i> Cabeamento Estruturado (Cat6/Fibra)</li>
-                    <li><i class="ph ph-check-circle" style="color:var(--primary-color)"></i> Configuração de Servidores e Racks</li>
-                    <li><i class="ph ph-check-circle" style="color:var(--primary-color)"></i> Wi-Fi Corporativo de Alta Densidade</li>
-                </ul>
-            </div>
-            <div class="solution-image">
-    <img src="assets/images/redes-detail.webp" alt="Servidor e cabos de rede">
-</div>
-        </div>
-    </section>
-
-    <section class="benefits-section">
-        <div class="container">
-            <h2>Benefícios da Rede Estruturada</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="ph ph-wifi-high"></i>
-                    <h3>Velocidade Real</h3>
-                    <p>Aproveite 100% da velocidade da internet contratada com equipamentos configurados corretamente.</p>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-main">
+      <div class="container header-flex">
+        <a href="/" class="logo"><img src="/assets/images/LOGO FUNDO TRANSPARENTE.png" alt="Edgeti Logo" /></a>
+        <nav class="nav-desktop">
+          <ul class="nav-list">
+            <li><a href="/">Home</a></li>
+            <li class="has-mega-menu"><a href="/#servicos">Soluções ▾</a>
+              <div class="mega-menu">
+                <div class="mega-menu-grid">
+                  <a href="/informatica" class="mega-menu-card"><h4>Informática</h4></a>
+                  <a href="/redes" class="mega-menu-card highlight-card"><h4>Redes</h4></a>
+                  <a href="/seguranca" class="mega-menu-card"><h4>Segurança</h4></a>
+                  <a href="/cloud" class="mega-menu-card"><h4>Cloud</h4></a>
+                  <a href="/suporte-tecnico" class="mega-menu-card"><h4>Suporte</h4></a>
                 </div>
-                <div class="benefit-card">
-                    <i class="ph ph-arrows-split"></i>
-                    <h3>Organização</h3>
-                    <p>Fim da bagunça de cabos. Racks organizados e identificados facilitam a manutenção.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="ph ph-lock-key"></i>
-                    <h3>Controle de Acesso</h3>
-                    <p>Defina quem acessa o quê na sua rede, garantindo segurança interna.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="container">
-            <h2>Vamos melhorar sua conexão?</h2>
-            <a href="https://wa.me/554891763985" class="btn-primary">Solicitar Vistoria Técnica</a>
-        </div>
-    </section>
-
-     <section class="stats-section">
-    <div class="container-stats">
-        <div class="stats-text">
-            <h2>Tecnologia que gera <span class="highlight">Resultado Real</span></h2>
-            <p>Empresas parceiras da <strong>Edge TI</strong> em toda a Grande Florianópolis — do Aririú ao Campeche — experimentam uma transformação imediata na fluidez do trabalho.</p>
-            
-            <ul class="stats-list">
-                <li>
-                    <span class="stat-number">+35%</span>
-                    <span class="stat-desc">Aumento na Produtividade Geral</span>
-                </li>
-                <li>
-                    <span class="stat-number">-75%</span>
-                    <span class="stat-desc">Redução de Ociosidade (Downtime)</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="stats-chart">
-            <canvas id="edgeChart"></canvas>
-            <div id="chart-legend"></div>
-        </div>
+              </div>
+            </li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/#vamos-conversar">Contato</a></li>
+            <li><a href="/central-privacidade">Privacidade</a></li>
+          </ul>
+        </nav>
+        <button id="btn-mobile"><i class="ph ph-list"></i></button>
+      </div>
     </div>
-</section>
+  </header>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    const ctx = document.getElementById('edgeChart').getContext('2d');
-    const edgeChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['Tempo Produtivo', 'Ociosidade (Reduzida)', 'Manutenção'],
-            datasets: [{
-                label: 'Performance Operacional',
-                data: [85, 5, 10], // Dados baseados na otimização Edge TI
-                backgroundColor: [
-                    '#00d1b2', // Verde Sucesso (Produtividade)
-                    '#ff3860', // Vermelho (Ociosidade mínima)
-                    '#3273dc'  // Azul (Manutenção Preventiva)
-                ],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        color: '#333',
-                        font: { size: 14 }
-                    }
-                }
-            }
-        }
-    });
-</script>
-</main>
+  <div class="breadcrumb"><a href="/">Início</a> <span>></span> <strong style="color: #ffffff;">Redes e Servidores</strong></div>
 
-     <footer id="contato" class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                
-                <div class="footer-column footer-about">
-                    <h3 class="footer-logo">Edge TI</h3>
-                    <p>Sua parceira em soluções de tecnologia, focada em performance, segurança e suporte especializado para impulsionar seus resultados.</p>
-                    <div class="social-media">
-                        <a href="https://www.instagram.com/edge.ti/" target="_blank" aria-label="Instagram" class="social-link">
-                            <span class="icon-footer icon-insta"></span>
-                        </a>
-                    </div>
+  <div class="page-header-spacing">
+    <span class="badge-category">Infraestrutura</span>
+    <h1>Infraestrutura de Redes e Servidores</h1>
+    <p>A espinha dorsal de conectividade da sua empresa. Projetamos, organizamos e gerenciamos redes de alto desempenho para manter seus dados fluindo em total estabilidade.</p>
+  </div>
+
+  <main class="content-container">
+    
+    <!-- Seção de Introdução do Serviço -->
+    <section class="service-detail-grid">
+      <div class="text-block">
+        <h2>Conectividade robusta e sem interrupções</h2>
+        <p>Quedas constantes de Wi-Fi, servidores lentos e cabos desorganizados geram gargalos silenciosos que afetam a produtividade da sua empresa e causam paradas inesperadas. Uma infraestrutura de rede robusta é indispensável para negócios que buscam estabilidade.</p>
+        <p>A Edge TI atua no design, otimização e manutenção preventiva de toda a malha lógica e física da sua infraestrutura, garantindo conexões rápidas, servidores seguros e caminhos redundantes contra falhas.</p>
+      </div>
+      <div class="visual-side">
+        <div class="server-rack-page">
+            <div class="server-blade-page"><span class="led-page"></span><span class="led-page"></span></div>
+            <div class="server-blade-page"><span class="led-page"></span><span class="led-page"></span></div>
+            <div class="server-blade-page"><span class="led-page"></span><span class="led-page"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Central de Links de Serviços -->
+    <h2 class="subservices-title">Nossas Soluções de Rede</h2>
+    
+    <section class="subservices-grid">
+        
+        <!-- Card 1 -->
+        <a href="cabeamento-estruturado" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-network"></i>
+                    <h3>Cabeamento Estruturado</h3>
                 </div>
-
-                <div class="footer-column footer-links">
-                    <h3>Links Rápidos</h3>
-                    <ul>
-                        <li><a href="/#inicio">Início</a></li>
-                        <li><a href="/#servicos">Soluções</a></li>
-                        <li><a href="/#sobre">Sobre Nós</a></li>
-                        <li><a href="/#vamos-conversar">Contato</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column footer-contact">
-                    <h3>Contato</h3>
-                    <ul>
-                        <li>
-                            <span class="icon-footer icon-map"></span>
-                            <span>Palhoça, SC, Brasil</span>
-                        </li>
-                        <li>
-                            <span class="icon-footer icon-phone"></span>
-                            <span>(48) 9176-3985</span>
-                        </li>
-                        <li>
-                            <span class="icon-footer icon-mail"></span>
-                            <span>contato@edgeti.com.br</span>
-                        </li>
-                    </ul>
-                </div>
+                <p>Organização física de cabos, montagem de Racks e identificação lógica para simplificar manutenções e otimizar a velocidade de transmissão local.</p>
             </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
 
-            <div class="footer-bottom">
-                <p>&copy; 2026 Edge TI. Todos os direitos reservados.</p>
-                <a href="centralPrivacidade">Política de Privacidade</a>
+        <!-- Card 2 -->
+        <a href="configuracao-equipamentos" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-hard-drives"></i>
+                    <h3>Configuração de Switches e Roteadores</h3>
+                </div>
+                <p>Segmentação inteligente de tráfego, políticas de segurança internas (VLANs) e balanceamento de tráfego de dados para máxima estabilidade de link.</p>
+            </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="wifi-corporativo" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-wifi-high"></i>
+                    <h3>Wi-Fi Corporativo de Alta Intensidade</h3>
+                </div>
+                <p>Dimensionamento de redes sem fio com tecnologia de roaming, permitindo alta densidade de conexões estáveis para colaboradores e visitantes sem quedas.</p>
+            </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="gestao-servidores" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-cpu"></i>
+                    <h3>Instalação e Gestão de Servidores</h3>
+                </div>
+                <p>Deploy e gerenciamento contínuo de servidores físicos e virtuais (Windows Server/Linux), controlando de forma ativa acessos, backups e aplicações corporativas.</p>
+            </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+    </section>
+
+    <!-- Seção de Fechamento de Valor -->
+    <section class="service-detail-grid">
+        <div class="text-block">
+            <h2>Invista na base do seu ecossistema digital</h2>
+            <p>Seus sistemas de gestão (ERPs), ferramentas de nuvem e e-mails corporativos dependem de uma única coisa: a rede. Ignorar o estado dos cabos, roteadores ou switches é colocar o fluxo financeiro da sua empresa em risco.</p>
+            <p>Com as soluções escaláveis de Redes e Servidores da Edge TI, nós preparamos a estrutura lógica do seu negócio para suportar novos colaboradores e tecnologias sem gargalos estruturais.</p>
+        </div>
+        <div class="stats-visual">
+            <div class="stat-card">
+                <i class="ph-fill ph-lightning" style="color: #00ff66; font-size: 2.5rem;"></i>
+                <div class="stat-info"><h4>Zero Gargalos</h4><p>Dados transmitidos com a máxima velocidade local disponível.</p></div>
+            </div>
+            <div class="stat-card blue-card">
+                <i class="ph-fill ph-git-fork" style="color: #00a4ff; font-size: 2.5rem;"></i>
+                <div class="stat-info"><h4>Alta Disponibilidade</h4><p>Redundância inteligente de links para evitar quedas repentinas.</p></div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="js/menu.js"></script>
-    
-    <a href="https://wa.me/554891763985" class="whatsapp-float" target="_blank">
-        <i class="ph ph-whatsapp-logo"></i>
-    </a>
+  </main>
 
+  <!-- CTA -->
+  <section id="vamos-conversar" class="section cta-section-modern">
+    <div class="container cta-container-box">
+      <div class="cta-glow-backdrop"></div>
+      <div class="cta-content-wrapper">
+        <h2>Garanta uma rede estável e veloz na sua empresa</h2>
+        <p>Precisa organizar seus racks ou otimizar a velocidade de conexão dos seus servidores? Fale com nosso especialista.</p>
+        <div class="cta-group-modern">
+            <a href="https://wa.me/554891763985?text=Olá!%20Gostaria%20de%20avaliar%20a%20infraestrutura%20de%20redes%20da%20minha%20empresa." target="_blank" rel="noopener noreferrer" class="btn-modern-tech btn-wa-gradient"><span class="icon-wa"></span> Chamar Especialista</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contato" class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column footer-about"><h3 class="footer-logo"><img src="/assets/images/LOGO FUNDO TRANSPARENTE.png" alt="logo Edge Ti"></h3><p>Sua parceira em soluções de tecnologia.</p></div>
+        <div class="footer-column footer-links"><h3>Links Rápidos</h3><ul><li><a href="/">Início</a></li><li><a href="/#servicos">Soluções</a></li><li><a href="/#vamos-conversar">Contato</a></li></ul></div>
+        <div class="footer-column footer-contact"><h3>Contato</h3><ul><li><span class="icon-footer icon-map"></span><span>Palhoça, SC</span></li><li><span class="icon-footer icon-phone"></span><span>(48) 9176-3985</span></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Edge TI.</p><a href="/central-privacidade">Política de Privacidade</a></div>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>

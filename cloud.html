@@ -1,245 +1,272 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suporte de Informática e TI - Edge TI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soluções em Nuvem (Cloud) | Edge TI</title>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/cta.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <link rel="icon" type="image/png" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box !important; }
+    body { background-color: #0d0e0e; color: #e2e8f0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
 
-<link rel="apple-touch-icon" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+    .breadcrumb { max-width: 1200px; margin: 2rem auto 0 auto; padding: 0 2rem; font-size: 0.9rem; color: #8a949d; }
+    .breadcrumb a { color: #00a4ff; text-decoration: none; transition: color 0.3s; }
+    .breadcrumb a:hover { color: #00ff66; }
+    .breadcrumb span { margin: 0 0.5rem; }
 
-<link rel="shortcut icon" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+    .page-header-spacing { padding: 3rem 2rem 2rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; }
+    .badge-category { background: rgba(0, 164, 255, 0.15); border: 1px solid rgba(0, 164, 255, 0.4); color: #00a4ff; padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 1.5rem; }
+    .page-header-spacing h1 { font-size: 3rem; font-weight: 800; color: #ffffff; letter-spacing: -1px; margin-bottom: 1rem; line-height: 1.2; }
+    .page-header-spacing p { font-size: 1.2rem; color: #c1c7cd; line-height: 1.6; }
+
+    .content-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     
-    <meta name="description" content="Suporte técnico especializado em TI para empresas. Outsourcing, manutenção de computadores e helpdesk ágil. Reduza o tempo de inatividade da sua empresa.">
+    /* Grid Principal da Página */
+    .service-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; background: #121314; padding: 4rem; border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); margin-bottom: 4rem; }
+    .text-block h2 { font-size: 2rem; color: #ffffff; font-weight: 700; margin-bottom: 1.2rem; }
+    .text-block p { font-size: 1.05rem; color: #a8b0b8; line-height: 1.8; margin-bottom: 1.5rem; }
 
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/solucoes.css">
+    /* --- GRID DE SUBPÁGINAS / LINKS --- */
+    .subservices-title { font-size: 2rem; color: #ffffff; font-weight: 700; margin-bottom: 2rem; text-align: center; }
+    .subservices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 4rem; }
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    .subservice-card { background: #121314; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; padding: 2rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .subservice-card:hover { transform: translateY(-5px); background: #16181b; border-color: rgba(0, 164, 255, 0.4); box-shadow: 0 15px 30px rgba(0, 164, 255, 0.1); }
+    
+    .card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .card-header i { font-size: 2.5rem; color: #00a4ff; }
+    .card-header h3 { font-size: 1.25rem; color: #ffffff; font-weight: 600; margin: 0; line-height: 1.3; }
+    .subservice-card p { font-size: 0.95rem; color: #a8b0b8; line-height: 1.6; margin: 0 0 1.5rem 0; }
+    
+    .card-link-text { font-size: 0.9rem; font-weight: 700; color: #00a4ff; display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+    .subservice-card:hover .card-link-text { color: #00ff66; }
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10853852987"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-10853852987');
-    </script>
-    <meta name="adopt-website-id" content="341ba5d4-b045-4bab-9246-e22ac7ddb548" />
-    <script src="//tag.goadopt.io/injector.js?website_code=341ba5d4-b045-4bab-9246-e22ac7ddb548" 
-            class="adopt-injector"
-            data-cookie-domain="edgeti.com.br">
-    </script>
+    /* --- ANIMAÇÃO CENTRAL: NUVEM FLUTUANTE --- */
+    .visual-side { display: flex; align-items: center; justify-content: center; position: relative; height: 350px; animation: cloudFloatPage 4.5s infinite ease-in-out; }
+    .cloud-base-page { width: 240px; height: 80px; background: #ffffff; border-radius: 60px; position: relative; opacity: 0.95; filter: drop-shadow(0 20px 40px rgba(0, 164, 255, 0.4)); }
+    .cloud-puff-page { background: #ffffff; position: absolute; border-radius: 50%; }
+    .puff-1-page { width: 110px; height: 110px; top: -55px; left: 35px; }
+    .puff-2-page { width: 90px; height: 90px; top: -35px; right: 35px; }
+    @keyframes cloudFloatPage { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+    /* --- VISUAL PERFORMANCE CONTRASTE --- */
+    .stats-visual { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center; height: 100%; }
+    .stat-card { background: #16181b; border: 1px solid rgba(255,255,255,0.06); border-left: 4px solid #00ff66; border-radius: 16px; padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; width: 100%; max-width: 360px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); animation: floatStatPage 5s infinite ease-in-out; }
+    .stat-card.blue-card { border-left-color: #00a4ff; animation-delay: 2.5s; }
+    .stat-info h4 { margin: 0 0 0.3rem 0; color: #ffffff; font-size: 1.15rem; font-weight: 600; }
+    .stat-info p { margin: 0; color: #a8b0b8; font-size: 0.95rem; line-height: 1.4; }
+    @keyframes floatStatPage { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    @media (max-width: 992px) {
+      .service-detail-grid, .subservices-grid { grid-template-columns: 1fr; }
+      .visual-side { order: -1; height: 200px; }
+      .page-header-spacing h1 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
-<body>
 
-    <header id="header">
+<body>
+  <header id="header">
+    <div class="header-main">
         <div class="container header-flex">
             <a href="/" class="logo">
                 <img src="/assets/images/LOGO FUNDO TRANSPARENTE.png" alt="Edgeti Logo" />
             </a>
+            
+            <!-- MENU DESKTOP -->
             <nav class="nav-desktop">
                 <ul class="nav-list">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/#servicos">Soluções</a></li>
+                    
+                    <!-- Item com Mega Menu -->
+                    <li class="has-mega-menu">
+                        <a href="/#servicos">Soluções ▾</a>
+                        
+                        <!-- Painel do Mega Menu -->
+                        <div class="mega-menu">
+                            <div class="mega-menu-grid">
+                                <a href="informatica" class="mega-menu-card">
+                                    <h4>Informática</h4>
+                                    <p>Suporte ágil e eficiente para o dia a dia da sua empresa.</p>
+                                </a>
+                                <a href="redes" class="mega-menu-card">
+                                    <h4>Redes e Servidores</h4>
+                                    <p>A base sólida para a conectividade do seu negócio.</p>
+                                </a>
+                                <a href="seguranca" class="mega-menu-card">
+                                    <h4>Segurança da Informação</h4>
+                                    <p>Protegendo seu ativo mais valioso: seus dados.</p>
+                                </a>
+                                <a href="cloud" class="mega-menu-card">
+                                    <h4>Cloud (Nuvem)</h4>
+                                    <p>Flexibilidade e escalabilidade para o futuro do negócio.</p>
+                                </a>
+                                <a href="suporte-tecnico" class="mega-menu-card highlight-card">
+                                    <h4>Suporte Técnico para Empresas</h4>
+                                    <p>Suporte de ponta a ponta, sem o custo de uma equipe interna.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    
                     <li><a href="blog" class="active">Blog</a></li>
                     <li><a href="/#vamos-conversar">Contato</a></li>
                     <li><a href="central-privacidade">Central de Privacidade</a></li>
                 </ul>
             </nav>
+            
             <button id="btn-mobile" aria-label="Abrir Menu">
                 <i class="ph ph-list"></i>
             </button>
         </div>
-        <div id="menu-mobile" class="menu-mobile-container">
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/#servicos">Soluções</a></li>
-                    <li><a href="blog">Blog</a></li>
-                    <li><a href="/#vamos-conversar">Contato</a></li>
-                    <li><a href="central-privacidade">Central de Privacidade</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-    <section class="solution-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Soluções em Cloud & Backup</h1>
-                <p class="hero-subtitle">Leve sua empresa para a nuvem. Acesso remoto, segurança de dados e backups automáticos.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section solution-content">
-        <div class="container solution-grid">
-            <div class="solution-text">
-                <h2>Seus dados, acessíveis de qualquer lugar.</h2>
-                <p>A nuvem permite que sua empresa cresça sem investir fortunas em servidores físicos. Migramos seus e-mails e arquivos para o Microsoft 365 ou Google Workspace.</p>
-                <p>Implementamos rotinas de Backup em Nuvem criptografado, garantindo que, mesmo em caso de desastres físicos ou ataques, seus dados possam ser recuperados em minutos.</p>
-            </div>
-            <div class="solution-image">
-                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Cloud Computing Conexões">
-            </div>
-        </div>
-    </section>
-
-    <section class="benefits-section">
-        <div class="container">
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="ph ph-cloud-arrow-up"></i>
-                    <h3>Backup Automatizado</h3>
-                    <p>Esqueça o HD externo. Seus dados salvos automaticamente na nuvem todos os dias.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="ph ph-microsoft-outlook-logo"></i>
-                    <h3>Microsoft 365</h3>
-                    <p>Implantação e gestão de licenças Office, Teams e OneDrive corporativo.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="ph ph-globe"></i>
-                    <h3>Acesso Remoto</h3>
-                    <p>VPNs e áreas de trabalho remotas para sua equipe trabalhar de casa com segurança.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="container">
-            <h2>Vamos migrar para a nuvem?</h2>
-            <a href="https://wa.me/554891763985" class="btn-primary">Fale com a EDGETI</a>
-        </div>
-    </section>
-
-    <section class="cloud-stats-section">
-    <div class="container-cloud">
-        <div class="cloud-text">
-            <h2>Sua Empresa <span class="cloud-highlight">Sem Fronteiras</span></h2>
-            <p>Migrar para a nuvem com a <strong>Edge TI</strong> significa eliminar barreiras geográficas. Acesse seu servidor do Campeche, Aririú ou de qualquer lugar do mundo com estabilidade total.</p>
-            
-            <div class="cloud-features">
-                <div class="c-feature">
-                    <i class="icon-cloud"></i>
-                    <span><strong>99.9%</strong> de Uptime Real</span>
-                </div>
-                <div class="c-feature">
-                    <i class="icon-sync"></i>
-                    <span>Sincronização Instantânea</span>
-                </div>
-                <div class="c-feature">
-                    <i class="icon-lock"></i>
-                    <span>Criptografia de Ponta a Ponta</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="cloud-chart-box">
-            <canvas id="cloudChart"></canvas>
-        </div>
     </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    const ctxCloud = document.getElementById('cloudChart').getContext('2d');
-    const cloudChart = new Chart(ctxCloud, {
-        type: 'polarArea', // Gráfico de Área Polar: transmite ideia de expansão/nuvem
-        data: {
-            labels: ['Disponibilidade', 'Segurança', 'Acesso Remoto', 'Escalabilidade', 'Economia'],
-            datasets: [{
-                label: 'Benefícios Cloud',
-                data: [99, 95, 100, 90, 85], // Valores representativos de eficiência
-                backgroundColor: [
-                    'rgba(50, 115, 220, 0.7)',  // Azul Edge
-                    'rgba(0, 209, 178, 0.7)',   // Verde Sucesso
-                    'rgba(170, 107, 255, 0.7)', // Roxo (Inovação/Cloud)
-                    'rgba(255, 221, 87, 0.7)',  // Amarelo (Energia)
-                    'rgba(255, 56, 96, 0.7)'    // Rosa/Vermelho (Custo reduzido)
-                ],
-                borderWidth: 2,
-                borderColor: '#ffffff'
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                r: {
-                    ticks: { display: false },
-                    grid: { color: '#eee' }
-                }
-            },
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: { color: '#4a4a4a', font: { size: 12, weight: '600' } }
-                }
-            }
-        }
-    });
-</script>
-</main>
-
-     <footer id="contato" class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                
-                <div class="footer-column footer-about">
-                    <h3 class="footer-logo">Edge TI</h3>
-                    <p>Sua parceira em soluções de tecnologia, focada em performance, segurança e suporte especializado para impulsionar seus resultados.</p>
-                    <div class="social-media">
-                        <a href="https://www.instagram.com/edge.ti/" target="_blank" aria-label="Instagram" class="social-link">
-                            <span class="icon-footer icon-insta"></span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-column footer-links">
-                    <h3>Links Rápidos</h3>
-                    <ul>
-                        <li><a href="/#inicio">Início</a></li>
-                        <li><a href="/#servicos">Soluções</a></li>
-                        <li><a href="/#sobre">Sobre Nós</a></li>
-                        <li><a href="/#vamos-conversar">Contato</a></li>
+    <!-- MENU MOBILE -->
+    <div id="menu-mobile" class="menu-mobile-container">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="mobile-has-submenu">
+                    <a href="/#servicos">Soluções</a>
+                    <!-- Submenu Mobile -->
+                    <ul class="mobile-submenu">
+                        <li><a href="informatica">- Informática</a></li>
+                        <li><a href="redes">- Redes e Servidores</a></li>
+                        <li><a href="seguranca">- Segurança da Informação</a></li>
+                        <li><a href="cloud">- Cloud (Nuvem)</a></li>
+                        <li><a href="suporte-tecnico">- Suporte Técnico</a></li>
                     </ul>
-                </div>
+                </li>
+                <li><a href="blog">Blog</a></li>
+                <li><a href="/#vamos-conversar">Contato</a></li>
+                <li><a href="central-privacidade">Central de Privacidade</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-                <div class="footer-column footer-contact">
-                    <h3>Contato</h3>
-                    <ul>
-                        <li>
-                            <span class="icon-footer icon-map"></span>
-                            <span>Palhoça, SC, Brasil</span>
-                        </li>
-                        <li>
-                            <span class="icon-footer icon-phone"></span>
-                            <span>(48) 9176-3985</span>
-                        </li>
-                        <li>
-                            <span class="icon-footer icon-mail"></span>
-                            <span>contato@edgeti.com.br</span>
-                        </li>
-                    </ul>
+  <div class="breadcrumb"><a href="/">Início</a> <span>></span> <strong style="color: #ffffff;">Cloud</strong></div>
+
+  <div class="page-header-spacing">
+    <span class="badge-category">Nuvem Corporativa</span>
+    <h1>Soluções em Nuvem (Cloud)</h1>
+    <p>Mobilidade, segurança e escalabilidade para o futuro do seu negócio. Reduza custos com hardware físico e tenha seus sistemas e arquivos acessíveis de qualquer lugar.</p>
+  </div>
+
+  <main class="content-container">
+    
+    <!-- Seção de Introdução do Serviço -->
+    <section class="service-detail-grid">
+      <div class="text-block">
+        <h2>Sua empresa sem barreiras físicas</h2>
+        <p>Manter servidores físicos locais gera altos custos de manutenção, energia e riscos de perda de dados por falhas de hardware ou imprevistos estruturais. A computação em nuvem transforma essa realidade, trazendo flexibilidade e segurança de nível global para o seu negócio.</p>
+        <p>A Edge TI projeta e gerencia a transição da sua estrutura local para ambientes em nuvem otimizados, garantindo que suas ferramentas de produtividade, e-mails e backups operem com sincronização contínua e criptografia rígida.</p>
+      </div>
+      <div class="visual-side">
+        <div class="cloud-base-page">
+            <div class="cloud-puff-page puff-1-page"></div>
+            <div class="cloud-puff-page puff-2-page"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Central de Links de Serviços (Três colunas no PC devido ao número de itens) -->
+    <h2 class="subservices-title">Nossos Serviços em Nuvem</h2>
+    
+    <section class="subservices-grid">
+        
+        <!-- Card 1 -->
+        <a href="/cloud/migracao-cloud" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-cloud-arrow-up"></i>
+                    <h3>Migração de Servidores para Nuvem</h3>
                 </div>
+                <p>Transferência segura e estruturada de banco de dados, arquivos e sistemas locais para data centers modernos, garantindo disponibilidade contínua.</p>
             </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
 
-            <div class="footer-bottom">
-                <p>&copy; 2026 Edge TI. Todos os direitos reservados.</p>
-                <a href="centralPrivacidade">Política de Privacidade</a>
+        <!-- Card 2 -->
+        <a href="/cloud/backup-nuvem" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-cloud-check"></i>
+                    <h3>Backup em Nuvem</h3>
+                </div>
+                <p>Rotinas automatizadas de salvamento e criptografia para proteger os dados mais importantes da sua empresa contra exclusões ou ataques cibernéticos.</p>
+            </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="/cloud/email-corporativo" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-envelope-open"></i>
+                    <h3>E-mail Corporativo</h3>
+                </div>
+                <p>Profissionalização da comunicação empresarial utilizando plataformas líderes como Microsoft 365 e Google Workspace com domínio personalizado.</p>
+            </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+    </section>
+
+    <!-- Seção de Fechamento de Valor -->
+    <section class="service-detail-grid">
+        <div class="text-block">
+            <h2>Por que a nuvem é o melhor caminho?</h2>
+            <p>Trabalhar em nuvem vai além de armazenar arquivos na internet; trata-se de criar um ambiente colaborativo e imune a falhas físicas. Se um computador da sua equipe apresentar um defeito técnico hoje, seu colaborador poderá continuar trabalhando de outro dispositivo instantaneamente, sem perda de progresso.</p>
+            <p>Com o gerenciamento especializado da Edge TI, cuidamos de toda a arquitetura lógica, controle de permissões e segurança de borda para que a transição digital da sua empresa ocorra sem nenhum atrito operacional.</p>
+        </div>
+        <div class="stats-visual">
+            <div class="stat-card">
+                <i class="ph-fill ph-arrows-clockwise" style="color: #00ff66; font-size: 2.5rem;"></i>
+                <div class="stat-info"><h4>Mobilidade Total</h4><p>Sua equipe conectada e produtiva de qualquer lugar.</p></div>
+            </div>
+            <div class="stat-card blue-card">
+                <i class="ph-fill ph-coin" style="color: #00a4ff; font-size: 2.5rem;"></i>
+                <div class="stat-info"><h4>Redução de Custos</h4><p>Fim dos gastos pesados com infraestrutura de hardware local.</p></div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="js/menu.js"></script>
-    
-    <a href="https://wa.me/554891763985" class="whatsapp-float" target="_blank">
-        <i class="ph ph-whatsapp-logo"></i>
-    </a>
+  </main>
 
+  <!-- CTA -->
+  <section id="vamos-conversar" class="section cta-section-modern">
+    <div class="container cta-container-box">
+      <div class="cta-glow-backdrop"></div>
+      <div class="cta-content-wrapper">
+        <h2>Modernize a infraestrutura da sua empresa</h2>
+        <p>Pronto para migrar seus servidores ou implementar uma estrutura profissional de e-mail e nuvem? Fale com a gente.</p>
+        <div class="cta-group-modern">
+            <a href="https://wa.me/554891763985?text=Olá!%20Gostaria%20de%20entender%20melhor%20as%20soluções%20em%20nuvem%20da%20Edge%20TI." target="_blank" rel="noopener noreferrer" class="btn-modern-tech btn-wa-gradient"><span class="icon-wa"></span> Falar com Especialista</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contato" class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column footer-about"><h3 class="footer-logo"><img src="/assets/images/LOGO FUNDO TRANSPARENTE.png" alt="logo Edge Ti"></h3><p>Sua parceira em soluções de tecnologia.</p></div>
+        <div class="footer-column footer-links"><h3>Links Rápidos</h3><ul><li><a href="/">Início</a></li><li><a href="/#servicos">Soluções</a></li><li><a href="/#vamos-conversar">Contato</a></li></ul></div>
+        <div class="footer-column footer-contact"><h3>Contato</h3><ul><li><span class="icon-footer icon-map"></span><span>Palhoça, SC</span></li><li><span class="icon-footer icon-phone"></span><span>(48) 9176-3985</span></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Edge TI.</p><a href="/central-privacidade">Política de Privacidade</a></div>
+    </div>
+  </footer>
 </body>
 </html>

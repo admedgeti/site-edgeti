@@ -1,239 +1,234 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suporte de Informática e TI - Edge TI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segurança da Informação | Edge TI</title>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/cta.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <link rel="icon" type="image/png" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box !important; }
+    body { background-color: #0d0e0e; color: #e2e8f0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
 
-    <link rel="apple-touch-icon" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+    .breadcrumb { max-width: 1200px; margin: 2rem auto 0 auto; padding: 0 2rem; font-size: 0.9rem; color: #8a949d; }
+    .breadcrumb a { color: #00a4ff; text-decoration: none; transition: color 0.3s; }
+    .breadcrumb a:hover { color: #00ff66; }
+    .breadcrumb span { margin: 0 0.5rem; }
 
-    <link rel="shortcut icon" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+    .page-header-spacing { padding: 3rem 2rem 2rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; }
+    .badge-category { background: rgba(255, 69, 58, 0.15); border: 1px solid rgba(255, 69, 58, 0.4); color: #ff453a; padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 1.5rem; }
+    .page-header-spacing h1 { font-size: 3rem; font-weight: 800; color: #ffffff; letter-spacing: -1px; margin-bottom: 1rem; line-height: 1.2; }
+    .page-header-spacing p { font-size: 1.2rem; color: #c1c7cd; line-height: 1.6; }
+
+    .content-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     
-    <meta name="description" content="Suporte técnico especializado em TI para empresas. Outsourcing, manutenção de computadores e helpdesk ágil. Reduza o tempo de inatividade da sua empresa.">
+    /* Grid Principal da Página */
+    .service-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; background: #121314; padding: 4rem; border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); margin-bottom: 4rem; }
+    .text-block h2 { font-size: 2rem; color: #ffffff; font-weight: 700; margin-bottom: 1.2rem; }
+    .text-block p { font-size: 1.05rem; color: #a8b0b8; line-height: 1.8; margin-bottom: 1.5rem; }
 
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/solucoes.css">
+    /* --- GRID DE SUBPÁGINAS / LINKS --- */
+    .subservices-title { font-size: 2rem; color: #ffffff; font-weight: 700; margin-bottom: 2rem; text-align: center; }
+    .subservices-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 4rem; }
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    .subservice-card { background: #121314; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; padding: 2rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .subservice-card:hover { transform: translateY(-5px); background: #16181b; border-color: rgba(255, 69, 58, 0.4); box-shadow: 0 15px 30px rgba(255, 69, 58, 0.1); }
+    
+    .card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .card-header i { font-size: 2.5rem; color: #ff453a; }
+    .card-header h3 { font-size: 1.3rem; color: #ffffff; font-weight: 600; margin: 0; }
+    .subservice-card p { font-size: 0.95rem; color: #a8b0b8; line-height: 1.6; margin: 0 0 1.5rem 0; }
+    
+    .card-link-text { font-size: 0.9rem; font-weight: 700; color: #00a4ff; display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+    .subservice-card:hover .card-link-text { color: #00ff66; }
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10853852987"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-10853852987');
-    </script>
-    <meta name="adopt-website-id" content="341ba5d4-b045-4bab-9246-e22ac7ddb548" />
-    <script src="//tag.goadopt.io/injector.js?website_code=341ba5d4-b045-4bab-9246-e22ac7ddb548" 
-            class="adopt-injector"
-            data-cookie-domain="edgeti.com.br">
-    </script>
+    /* --- ANIMAÇÃO CENTRAL: ESCUDO E ÓRBITAS --- */
+    .visual-side { display: flex; align-items: center; justify-content: center; position: relative; height: 350px; overflow: hidden; }
+    .shield-core-page { width: 90px; height: 105px; background: linear-gradient(135deg, #0f62fe, #00a4ff); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); z-index: 2; animation: shieldFloatPage 3.5s infinite ease-in-out; filter: drop-shadow(0 15px 30px rgba(15, 98, 254, 0.4)); }
+    .secure-orbit-page { position: absolute; width: 240px; height: 240px; border: 2px dashed rgba(0, 164, 255, 0.2); border-radius: 50%; animation: rotateOrbitPage 12s infinite linear; }
+    .delay-orbit-page { width: 300px; height: 300px; border-color: rgba(15, 98, 254, 0.1); animation: rotateOrbitPage 18s infinite linear reverse; }
+    @keyframes shieldFloatPage { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes rotateOrbitPage { 100% { transform: rotate(360deg); } }
+
+    /* --- VISUAL PERFORMANCE CONTRASTE --- */
+    .stats-visual { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center; height: 100%; }
+    .stat-card { background: #16181b; border: 1px solid rgba(255,255,255,0.06); border-left: 4px solid #00ff66; border-radius: 16px; padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; width: 100%; max-width: 360px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); animation: floatStatPage 5s infinite ease-in-out; }
+    .stat-card.red-card { border-left-color: #ff453a; animation-delay: 2.5s; }
+    .stat-info h4 { margin: 0 0 0.3rem 0; color: #ffffff; font-size: 1.15rem; font-weight: 600; }
+    .stat-info p { margin: 0; color: #a8b0b8; font-size: 0.95rem; line-height: 1.4; }
+    @keyframes floatStatPage { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    @media (max-width: 992px) {
+      .service-detail-grid, .subservices-grid { grid-template-columns: 1fr; }
+      .visual-side { order: -1; height: 250px; }
+      .page-header-spacing h1 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
+
 <body>
-
-    <header id="header">
-        <div class="container header-flex">
-            <a href="/" class="logo">
-                <img src="/assets/images/LOGO FUNDO TRANSPARENTE.png" alt="Edgeti Logo" />
-            </a>
-            <nav class="nav-desktop">
-                <ul class="nav-list">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/#servicos">Soluções</a></li>
-                    <li><a href="blog" class="active">Blog</a></li>
-                    <li><a href="/#vamos-conversar">Contato</a></li>
-                    <li><a href="central-privacidade">Central de Privacidade</a></li>
-                </ul>
-            </nav>
-            <button id="btn-mobile" aria-label="Abrir Menu">
-                <i class="ph ph-list"></i>
-            </button>
-        </div>
-        <div id="menu-mobile" class="menu-mobile-container">
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/#servicos">Soluções</a></li>
-                    <li><a href="blog">Blog</a></li>
-                    <li><a href="/#vamos-conversar">Contato</a></li>
-                    <li><a href="central-privacidade">Central de Privacidade</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-    <section class="solution-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Segurança da Informação & CFTV</h1>
-                <p class="hero-subtitle">Proteja seus dados contra ataques cibernéticos e monitore seu patrimônio físico com tecnologia de ponta.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section solution-content">
-        <div class="container solution-grid">
-            <div class="solution-text">
-                <h2>Segurança Física e Digital.</h2>
-                <p>A segurança é o ativo mais valioso hoje. Oferecemos soluções completas de cibersegurança, incluindo Firewalls, antivírus corporativo e adequação à LGPD para proteger os dados dos seus clientes.</p>
-                <p>Além disso, cuidamos da segurança física com instalação e manutenção de sistemas de câmeras (CFTV) com acesso remoto pelo celular, para você monitorar sua empresa de onde estiver.</p>
-            </div>
-            <div class="solution-image">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cibersegurança e cadeado digital">
-            </div>
-        </div>
-    </section>
-
-    <section class="benefits-section">
-        <div class="container">
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="ph ph-shield-warning"></i>
-                    <h3>Proteção Anti-Ransomware</h3>
-                    <p>Sistemas robustos para evitar o sequestro de dados e paradas críticas.</p>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-main">
+      <div class="container header-flex">
+        <a href="/" class="logo"><img src="/assets/images/LOGO FUNDO TRANSPARENTE.png" alt="Edgeti Logo" /></a>
+        <nav class="nav-desktop">
+          <ul class="nav-list">
+            <li><a href="/">Home</a></li>
+            <li class="has-mega-menu"><a href="/#servicos">Soluções ▾</a>
+              <div class="mega-menu">
+                <div class="mega-menu-grid">
+                  <a href="/informatica" class="mega-menu-card"><h4>Informática</h4></a>
+                  <a href="/redes" class="mega-menu-card"><h4>Redes</h4></a>
+                  <a href="/seguranca" class="mega-menu-card highlight-card"><h4>Segurança</h4></a>
+                  <a href="/cloud" class="mega-menu-card"><h4>Cloud</h4></a>
+                  <a href="/suporte-tecnico" class="mega-menu-card"><h4>Suporte</h4></a>
                 </div>
-                <div class="benefit-card">
-                    <i class="ph ph-video-camera"></i>
-                    <h3>Monitoramento 24h</h3>
-                    <p>Sistemas de CFTV modernos com gravação em nuvem ou local e acesso via App.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="ph ph-file-lock"></i>
-                    <h3>Conformidade LGPD</h3>
-                    <p>Ajudamos sua empresa a tratar dados sensíveis de acordo com a lei.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cta-section">
-        <div class="container">
-            <h2>Sua empresa está segura?</h2>
-            <a href="https://wa.me/554891763985" class="btn-primary">Consultoria de Segurança</a>
-        </div>
-    </section>
-
-    <section class="security-stats-section">
-    <div class="container-security">
-        <div class="security-chart-box">
-            <canvas id="securityChart"></canvas>
-            <div class="chart-center-text">
-                <span class="main-val">-90%</span>
-                <span class="sub-val">Risco</span>
-            </div>
-        </div>
-
-        <div class="security-text">
-            <h2>Sua empresa <span class="shield-highlight">Blindada</span> contra ameaças</h2>
-            <p>Implementamos camadas de redundância e criptografia que garantem a continuidade do seu negócio em <strong>Palhoça, São José e Florianópolis.</strong></p>
-            
-            <div class="security-cards">
-                <div class="s-card highlighted">
-                    <span class="s-percent">-90%</span>
-                    <p>Risco de Perda de Dados</p>
-                </div>
-                <div class="s-card">
-                    <span class="s-percent">100%</span>
-                    <p>Recuperação (Disaster Recovery)</p>
-                </div>
-            </div>
-            <p class="security-footer">Expertise em proteção de dados para empresas no <strong>Pagani, Aririú e Sul da Ilha.</strong></p>
-        </div>
+              </div>
+            </li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/#vamos-conversar">Contato</a></li>
+            <li><a href="/central-privacidade">Privacidade</a></li>
+          </ul>
+        </nav>
+        <button id="btn-mobile"><i class="ph ph-list"></i></button>
+      </div>
     </div>
-</section>
+  </header>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    const ctxSec = document.getElementById('securityChart').getContext('2d');
-    const securityChart = new Chart(ctxSec, {
-        type: 'doughnut',
-        data: {
-            labels: ['Risco Eliminado', 'Segurança Ativa', 'Risco Residual'],
-            datasets: [{
-                data: [90, 8, 2], // 90% representa o risco que foi mitigado
-                backgroundColor: [
-                    '#00d1b2', // Verde (Risco Mitigado/Eliminado)
-                    '#1a4f8b', // Azul (Segurança em Operação)
-                    '#e74c3c'  // Vermelho (Risco mínimo inevitável)
-                ],
-                hoverOffset: 12,
-                borderWidth: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            cutout: '80%', 
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'bottom',
-                    labels: { color: '#2c3e50', font: { weight: '600' } }
-                }
-            }
-        }
-    });
-</script>
-</main>
+  <div class="breadcrumb"><a href="/">Início</a> <span>></span> <strong style="color: #ffffff;">Segurança da Informação</strong></div>
 
-    <footer id="contato" class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                
-                <div class="footer-column footer-about">
-                    <h3 class="footer-logo">Edge TI</h3>
-                    <p>Sua parceira em soluções de tecnologia, focada em performance, segurança e suporte especializado para impulsionar seus resultados.</p>
-                    <div class="social-media">
-                        <a href="https://www.instagram.com/edge.ti/" target="_blank" aria-label="Instagram" class="social-link">
-                            <span class="icon-footer icon-insta"></span>
-                        </a>
-                    </div>
+  <div class="page-header-spacing">
+    <span class="badge-category">Proteção Digital</span>
+    <h1>Segurança da Informação</h1>
+    <p>Protegendo seu ativo mais valioso: seus dados. Implementamos blindagem cibernética em camadas para mitigar riscos, combater ameaças e garantir a continuidade do seu negócio.</p>
+  </div>
+
+  <main class="content-container">
+    
+    <!-- Seção de Introdução do Serviço -->
+    <section class="service-detail-grid">
+      <div class="text-block">
+        <h2>Blindagem contra ameaças ocultas</h2>
+        <p>Ataques cibernéticos, sequestros de dados (ransomware) e vazamentos de informações confidenciais são ameaças reais que podem paralisar operações e destruir a reputação de uma empresa em poucas horas. No ambiente digital moderno, a segurança reativa não é mais suficiente.</p>
+        <p>A Edge TI constrói barreiras de proteção proativas e inteligentes ao redor da sua infraestrutura. Analisamos vulnerabilidades, configuramos barreiras de borda e desenhamos fluxos rígidos de redundância para garantir que seus dados permaneçam confidenciais, íntegros e sempre disponíveis.</p>
+      </div>
+      <div class="visual-side">
+        <div class="shield-core-page"></div>
+        <div class="secure-orbit-page"></div>
+        <div class="secure-orbit-page delay-orbit-page"></div>
+      </div>
+    </section>
+
+    <!-- Seção Central de Links de Serviços -->
+    <h2 class="subservices-title">Nossas Soluções de Segurança</h2>
+    
+    <section class="subservices-grid">
+        
+        <!-- Card 1 -->
+        <a href="/seguranca/firewall-protecao" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-shield-checkered"></i>
+                    <h3>Firewall e Proteção de Borda (UTM)</h3>
                 </div>
-
-                <div class="footer-column footer-links">
-                    <h3>Links Rápidos</h3>
-                    <ul>
-                        <li><a href="/#inicio">Início</a></li>
-                        <li><a href="/#servicos">Soluções</a></li>
-                        <li><a href="/#sobre">Sobre Nós</a></li>
-                        <li><a href="/#vamos-conversar">Contato</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column footer-contact">
-                    <h3>Contato</h3>
-                    <ul>
-                        <li>
-                            <span class="icon-footer icon-map"></span>
-                            <span>Palhoça, SC, Brasil</span>
-                        </li>
-                        <li>
-                            <span class="icon-footer icon-phone"></span>
-                            <span>(48) 9176-3985</span>
-                        </li>
-                        <li>
-                            <span class="icon-footer icon-mail"></span>
-                            <span>contato@edgeti.com.br</span>
-                        </li>
-                    </ul>
-                </div>
+                <p>Monitoramento ativo e filtragem inteligente de todo o tráfego de rede local para bloquear intrusões, acessos maliciosos e conexões não autorizadas.</p>
             </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
 
-            <div class="footer-bottom">
-                <p>&copy; 2026 Edge TI. Todos os direitos reservados.</p>
-                <a href="centralPrivacidade">Política de Privacidade</a>
+        <!-- Card 2 -->
+        <a href="/seguranca/antivirus-endpoint" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-virus"></i>
+                    <h3>Soluções Antivírus e Anti-Ransomware</h3>
+                </div>
+                <p>Implementação de defesas de última geração em endpoints (estações de trabalho e servidores) para deter a execução de malwares avançados.</p>
+            </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="/seguranca/analise-vulnerabilidades" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-eye-scan"></i>
+                    <h3>Análise de Vulnerabilidades</h3>
+                </div>
+                <p>Auditorias e varreduras estruturadas na sua rede interna para identificar brechas de segurança antes que criminosos virtuais as descubram.</p>
+            </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="/seguranca/politicas-backup" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-archive"></i>
+                    <h3>Políticas de Backup e Desastres</h3>
+                </div>
+                <p>Criação de rotinas rígidas de backup imutável com planos de recuperação instantânea (Disaster Recovery) para garantir que sua empresa nunca pare.</p>
+            </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+    </section>
+
+    <!-- Seção de Fechamento de Valor -->
+    <section class="service-detail-grid">
+        <div class="text-block">
+            <h2>Defesa em profundidade para o seu faturamento</h2>
+            <p>Segurança da informação não se resume a instalar ferramentas de proteção isoladas; trata-se de criar uma cultura de resiliência tecnológica. Cada dispositivo, conta de e-mail corporativo ou ponto de acesso Wi-Fi da sua empresa deve fazer parte de uma engrenagem de defesa coordenada.</p>
+            <p>Mitigamos os riscos operacionais do seu ecossistema digital para que você mantenha o foco total na expansão do seu negócio, sabendo que sua infraestrutura está blindada pela Edge TI.</p>
+        </div>
+        <div class="stats-visual">
+            <div class="stat-card">
+                <i class="ph-fill ph-lock-key" style="color: #00ff66; font-size: 2.5rem;"></i>
+                <div class="stat-info"><h4>Dados Blindados</h4><p>Privacidade e integridade total de informações corporativas.</p></div>
+            </div>
+            <div class="stat-card red-card">
+                <i class="ph-fill ph-shield-alert" style="color: #ff453a; font-size: 2.5rem;"></i>
+                <div class="stat-info"><h4>Prevenção Ativa</h4><p>Ameaças neutralizadas na borda, antes de atingirem a rede.</p></div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="js/menu.js"></script>
-    
-    <a href="https://wa.me/554891763985" class="whatsapp-float" target="_blank">
-        <i class="ph ph-whatsapp-logo"></i>
-    </a>
+  </main>
 
+  <!-- CTA -->
+  <section id="vamos-conversar" class="section cta-section-modern">
+    <div class="container cta-container-box">
+      <div class="cta-glow-backdrop"></div>
+      <div class="cta-content-wrapper">
+        <h2>Proteja os dados estruturais da sua empresa</h2>
+        <p>Sua infraestrutura atual está realmente segura contra as novas ameaças virtuais? Fale conosco para realizar uma auditoria de segurança.</p>
+        <div class="cta-group-modern">
+            <a href="https://wa.me/554891763985?text=Olá!%20Gostaria%20de%20avaliar%20a%20segurança%20da%20informação%20da%20minha%20empresa." target="_blank" rel="noopener noreferrer" class="btn-modern-tech btn-wa-gradient"><span class="icon-wa"></span> Avaliar Minha Segurança</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contato" class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column footer-about"><h3 class="footer-logo"><img src="/assets/images/LOGO FUNDO TRANSPARENTE.png" alt="logo Edge Ti"></h3><p>Sua parceira em soluções de tecnologia.</p></div>
+        <div class="footer-column footer-links"><h3>Links Rápidos</h3><ul><li><a href="/">Início</a></li><li><a href="/#servicos">Soluções</a></li><li><a href="/#vamos-conversar">Contato</a></li></ul></div>
+        <div class="footer-column footer-contact"><h3>Contato</h3><ul><li><span class="icon-footer icon-map"></span><span>Palhoça, SC</span></li><li><span class="icon-footer icon-phone"></span><span>(48) 9176-3985</span></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Edge TI.</p><a href="/central-privacidade">Política de Privacidade</a></div>
+    </div>
+  </footer>
 </body>
 </html>

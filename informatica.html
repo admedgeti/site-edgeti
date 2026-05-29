@@ -1,39 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suporte de Informática e TI - Edge TI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soluções Completas em Informática | Edge TI</title>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/cta.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <link rel="icon" type="image/png" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box !important; }
+    body { background-color: #0d0e0e; color: #e2e8f0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
 
-    <link rel="apple-touch-icon" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+    .breadcrumb { max-width: 1200px; margin: 2rem auto 0 auto; padding: 0 2rem; font-size: 0.9rem; color: #8a949d; }
+    .breadcrumb a { color: #00a4ff; text-decoration: none; transition: color 0.3s; }
+    .breadcrumb a:hover { color: #00ff66; }
+    .breadcrumb span { margin: 0 0.5rem; }
 
-    <link rel="shortcut icon" href="https://edgeti.com.br/assets/images/logoEdgeTI-favicon.svg">
+    .page-header-spacing { padding: 3rem 2rem 2rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; }
+    .badge-category { background: rgba(0, 164, 255, 0.15); border: 1px solid rgba(0, 164, 255, 0.4); color: #00a4ff; padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 1.5rem; }
+    .page-header-spacing h1 { font-size: 3rem; font-weight: 800; color: #ffffff; letter-spacing: -1px; margin-bottom: 1rem; line-height: 1.2; }
+    .page-header-spacing p { font-size: 1.2rem; color: #c1c7cd; line-height: 1.6; }
+
+    .content-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     
-    <meta name="description" content="Suporte técnico especializado em TI para empresas. Outsourcing, manutenção de computadores e helpdesk ágil. Reduza o tempo de inatividade da sua empresa.">
+    /* Grid Principal da Página */
+    .service-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; background: #121314; padding: 4rem; border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); margin-bottom: 4rem; }
+    .text-block h2 { font-size: 2rem; color: #ffffff; font-weight: 700; margin-bottom: 1.2rem; }
+    .text-block p { font-size: 1.05rem; color: #a8b0b8; line-height: 1.8; margin-bottom: 1.5rem; }
 
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/paginas-solucoes.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    /* --- GRID DE SUBPÁGINAS / LINKS --- */
+    .subservices-title { font-size: 2rem; color: #ffffff; font-weight: 700; margin-bottom: 2rem; text-align: center; }
+    .subservices-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 4rem; }
+    
+    .subservice-card { background: #121314; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; padding: 2rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .subservice-card:hover { transform: translateY(-5px); background: #16181b; border-color: rgba(0, 164, 255, 0.4); box-shadow: 0 15px 30px rgba(0, 164, 255, 0.1); }
+    
+    .card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .card-header i { font-size: 2.5rem; color: #00a4ff; }
+    .card-header h3 { font-size: 1.3rem; color: #ffffff; font-weight: 600; margin: 0; }
+    .subservice-card p { font-size: 0.95rem; color: #a8b0b8; line-height: 1.6; margin: 0 0 1.5rem 0; }
+    
+    .card-link-text { font-size: 0.9rem; font-weight: 700; color: #00a4ff; display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
+    .subservice-card:hover .card-link-text { color: #00ff66; }
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10853852987"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-10853852987');
-    </script>
-    <meta name="adopt-website-id" content="341ba5d4-b045-4bab-9246-e22ac7ddb548" />
-    <script src="//tag.goadopt.io/injector.js?website_code=341ba5d4-b045-4bab-9246-e22ac7ddb548" 
-            class="adopt-injector"
-            data-cookie-domain="edgeti.com.br">
-    </script>
+    /* --- ANIMAÇÃO CENTRAL: RADAR MONITOR --- */
+    .visual-side { display: flex; align-items: center; justify-content: center; position: relative; height: 350px; }
+    .tech-monitor-page { width: 260px; height: 170px; border: 6px solid #3a3f4d; border-radius: 14px; position: relative; background: #16181b; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); }
+    .tech-monitor-page::after { content: ''; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); width: 70px; height: 25px; background: #3a3f4d; border-radius: 4px; }
+    .radar-pulse-page { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border: 3px solid #00a4ff; border-radius: 50%; animation: techRadarPage 3s infinite linear; box-shadow: 0 0 15px rgba(0, 164, 255, 0.2); }
+    @keyframes techRadarPage { 0% { width: 10px; height: 10px; opacity: 1; } 100% { width: 220px; height: 220px; opacity: 0; } }
+
+    /* --- VISUAL PERFORMANCE CONTRASTE --- */
+    .stats-visual { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center; height: 100%; }
+    .stat-card { background: #16181b; border: 1px solid rgba(255,255,255,0.06); border-left: 4px solid #00ff66; border-radius: 16px; padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; width: 100%; max-width: 360px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); animation: floatStatPage 5s infinite ease-in-out; }
+    .stat-card.blue-card { border-left-color: #00a4ff; animation-delay: 2.5s; }
+    .stat-info h4 { margin: 0 0 0.3rem 0; color: #ffffff; font-size: 1.15rem; font-weight: 600; }
+    .stat-info p { margin: 0; color: #a8b0b8; font-size: 0.95rem; line-height: 1.4; }
+    @keyframes floatStatPage { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    @media (max-width: 992px) {
+      .service-detail-grid, .subservices-grid { grid-template-columns: 1fr; }
+      .visual-side { order: -1; height: 250px; }
+      .page-header-spacing h1 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
-<body>
 
-   <header id="header">
+<body>
+  <!-- HEADER -->
+  <header id="header">
     <div class="header-main">
         <div class="container header-flex">
             <a href="/" class="logo">
@@ -52,7 +95,7 @@
                         <!-- Painel do Mega Menu -->
                         <div class="mega-menu">
                             <div class="mega-menu-grid">
-                                <a href="informatica" class="mega-menu-card">
+                                <a href="/informatica" class="mega-menu-card">
                                     <h4>Informática</h4>
                                     <p>Suporte ágil e eficiente para o dia a dia da sua empresa.</p>
                                 </a>
@@ -60,15 +103,15 @@
                                     <h4>Redes e Servidores</h4>
                                     <p>A base sólida para a conectividade do seu negócio.</p>
                                 </a>
-                                <a href="seguranca" class="mega-menu-card">
+                                <a href="/seguranca" class="mega-menu-card">
                                     <h4>Segurança da Informação</h4>
                                     <p>Protegendo seu ativo mais valioso: seus dados.</p>
                                 </a>
-                                <a href="cloud" class="mega-menu-card">
+                                <a href="/cloud" class="mega-menu-card">
                                     <h4>Cloud (Nuvem)</h4>
                                     <p>Flexibilidade e escalabilidade para o futuro do negócio.</p>
                                 </a>
-                                <a href="suporte-tecnico" class="mega-menu-card highlight-card">
+                                <a href="/suporte-tecnico" class="mega-menu-card highlight-card">
                                     <h4>Suporte Técnico para Empresas</h4>
                                     <p>Suporte de ponta a ponta, sem o custo de uma equipe interna.</p>
                                 </a>
@@ -96,11 +139,11 @@
                     <a href="/#servicos">Soluções</a>
                     <!-- Submenu Mobile -->
                     <ul class="mobile-submenu">
-                        <li><a href="informatica">- Informática</a></li>
-                        <li><a href="redes">- Redes e Servidores</a></li>
-                        <li><a href="seguranca">- Segurança da Informação</a></li>
-                        <li><a href="cloud">- Cloud (Nuvem)</a></li>
-                        <li><a href="suporte-tecnico">- Suporte Técnico</a></li>
+                        <li><a href="/informatica">- Informática</a></li>
+                        <li><a href="/redes">- Redes e Servidores</a></li>
+                        <li><a href="/seguranca">- Segurança da Informação</a></li>
+                        <li><a href="/cloud">- Cloud (Nuvem)</a></li>
+                        <li><a href="/suporte-tecnico">- Suporte Técnico</a></li>
                     </ul>
                 </li>
                 <li><a href="blog">Blog</a></li>
@@ -111,121 +154,130 @@
     </div>
 </header>
 
-    <main>
-        <section class="solution-hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Suporte de TI & Outsourcing</h1>
-                    <p class="hero-subtitle">Mantenha sua empresa operando sem interrupções com nosso suporte técnico ágil e proativo.</p>
+  <div class="breadcrumb"><a href="/">Início</a> <span>></span> <strong style="color: #ffffff;">Informática</strong></div>
+
+  <div class="page-header-spacing">
+    <span class="badge-category">Estações de Trabalho</span>
+    <h1>Soluções Completas em Informática</h1>
+    <p>Infraestrutura estável e computadores com alta performance. Eliminamos lentidões e falhas para que sua equipe trabalhe focada no crescimento do seu negócio.</p>
+  </div>
+
+  <main class="content-container">
+    
+    <!-- Seção de Introdução do Serviço -->
+    <section class="service-detail-grid">
+      <div class="text-block">
+        <h2>Tecnologia que impulsiona seus resultados</h2>
+        <p>Computadores lentos, travamentos constantes e problemas de configuração são gargalos silenciosos que roubam a produtividade da sua equipe todos os dias. Na Edge TI, nós tratamos a TI de forma estruturada e inteligente.</p>
+        <p>Oferecemos suporte completo e especializado para manter o parque tecnológico da sua empresa em perfeito estado de funcionamento. Cuidamos desde os ajustes de softwares até a manutenção física do hardware, garantindo total estabilidade para o seu negócio.</p>
+      </div>
+      <div class="visual-side">
+        <div class="tech-monitor-page">
+            <div class="radar-pulse-page"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Central de Links de Serviços -->
+    <h2 class="subservices-title">Nossos Serviços de Informática</h2>
+    
+    <section class="subservices-grid">
+        
+        <!-- Card 1 -->
+        <a href="manutencao-preventiva" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-wrench"></i>
+                    <h3>Manutenção Preventiva de Desktops</h3>
                 </div>
+                <p>Limpeza interna, gerenciamento térmico e testes físicos de componentes para estender a vida útil e evitar quebras imprevistas em desktops e notebooks.</p>
             </div>
-        </section>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
 
-        <section class="section solution-content">
-            <div class="container solution-grid">
-                <div class="solution-text">
-                    <h2>Sua equipe de TI, sob demanda.</h2>
-                    <p>Problemas com computadores lentos, impressoras paradas ou sistemas fora do ar custam dinheiro. A EDGETI atua como o braço direito da sua empresa, oferecendo suporte técnico completo (Helpdesk e Service Desk).</p>
-                    <p>Realizamos manutenção preventiva e corretiva, formatação, instalação de softwares e gestão de inventário, garantindo que sua equipe foque no que importa: o seu negócio.</p>
-                    
-                    <ul style="margin-top: 1rem; list-style: none;">
-                        <li style="margin-bottom: 0.5rem;"><i class="ph ph-check-circle" style="color:var(--primary-color)"></i> Atendimento Remoto e Presencial</li>
-                        <li style="margin-bottom: 0.5rem;"><i class="ph ph-check-circle" style="color:var(--primary-color)"></i> Manutenção de Hardware e Software</li>
-                        <li><i class="ph ph-check-circle" style="color:var(--primary-color)"></i> Consultoria para aquisição de equipamentos</li>
-                    </ul>
+        <!-- Card 2 -->
+        <a href="suporte-remoto-presencial" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-headset"></i>
+                    <h3>Suporte Técnico Remoto e Presencial</h3>
                 </div>
-                <div class="solution-image">
-                    <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=800&q=80" alt="Técnico de informática trabalhando">
-                </div>
+                <p>Atendimento sob medida para resolução de problemas operacionais do dia a dia, combinando agilidade digital com suporte local quando necessário.</p>
             </div>
-        </section>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
 
-        <section class="benefits-section">
-            <div class="container">
-                <h2>Por que escolher a EDGETI?</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <i class="ph ph-clock-afternoon"></i>
-                        <h3>Alta Disponibilidade</h3>
-                        <p>Reduza o tempo de inatividade da sua operação com nosso atendimento rápido via chamado ou WhatsApp.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <i class="ph ph-currency-dollar"></i>
-                        <h3>Redução de Custos</h3>
-                        <p>Mais barato e eficiente do que manter um funcionário de TI interno CLT na sua empresa.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <i class="ph ph-shield-check"></i>
-                        <h3>Prevenção</h3>
-                        <p>Monitoramos seus equipamentos para resolver problemas antes que eles parem sua empresa.</p>
-                    </div>
+        <!-- Card 3 -->
+        <a href="instalacao-softwares" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-gear-six"></i>
+                    <h3>Instalação e Configuração</h3>
                 </div>
+                <p>Implementação correta de sistemas operacionais, ferramentas corporativas e softwares específicos, garantindo conformidade e estabilidade.</p>
             </div>
-        </section>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
 
-        <section class="cta-section">
-            <div class="container">
-                <h2>Precisa de suporte agora?</h2>
-                <p style="margin-bottom: 2rem;">Fale com nossos especialistas e receba um orçamento personalizado.</p>
-                <a href="https://wa.me/554891763985" class="btn-primary">Falar com Consultor</a>
+        <!-- Card 4 -->
+        <a href="otimizacao-desempenho" class="subservice-card">
+            <div>
+                <div class="card-header">
+                    <i class="ph-fill ph-gauge"></i>
+                    <h3>Otimização de Desempenho</h3>
+                </div>
+                <p>Ajuste fino de sistemas, upgrades estruturais de hardware (SSDs/Memória) e limpeza de dados redundantes para extrair a máxima velocidade operacional.</p>
             </div>
-        </section>
-    </main>
-    <footer id="contato" class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                
-                <div class="footer-column footer-about">
-                    <h3 class="footer-logo">Edge TI</h3>
-                    <p>Sua parceira em soluções de tecnologia, focada em performance, segurança e suporte especializado para impulsionar seus resultados.</p>
-                    <div class="social-media">
-                        <a href="https://www.instagram.com/edge.ti/" target="_blank" aria-label="Instagram" class="social-link">
-                            <span class="icon-footer icon-insta"></span>
-                        </a>
-                    </div>
-                </div>
+            <span class="card-link-text">Saber mais <i class="ph ph-arrow-right"></i></span>
+        </a>
 
-                <div class="footer-column footer-links">
-                    <h3>Links Rápidos</h3>
-                    <ul>
-                        <li><a href="/#inicio">Início</a></li>
-                        <li><a href="/#servicos">Soluções</a></li>
-                        <li><a href="/#sobre">Sobre Nós</a></li>
-                        <li><a href="/#vamos-conversar">Contato</a></li>
-                    </ul>
-                </div>
+    </section>
 
-                <div class="footer-column footer-contact">
-                    <h3>Contato</h3>
-                    <ul>
-                        <li>
-                            <span class="icon-footer icon-map"></span>
-                            <span>Palhoça, SC, Brasil</span>
-                        </li>
-                        <li>
-                            <span class="icon-footer icon-phone"></span>
-                            <span>(48) 9176-3985</span>
-                        </li>
-                        <li>
-                            <span class="icon-footer icon-mail"></span>
-                            <span>contato@edgeti.com.br</span>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Seção de Fechamento de Valor -->
+    <section class="service-detail-grid">
+        <div class="text-block">
+            <h2>Por que a informática da sua empresa deve ser gerida?</h2>
+            <p>Deixar para resolver os problemas de informática apenas quando o computador para por completo é uma estratégia cara e arriscada. O suporte gerenciado atua na origem do problema, antes que ele cause interrupções nas suas vendas ou no atendimento aos seus clientes.</p>
+            <p>Com a Edge TI, o parque tecnológico da sua empresa recebe monitoramento constante de integridade, atualizações de segurança e backups estruturados para garantir que sua operação nunca pare.</p>
+        </div>
+        <div class="stats-visual">
+            <div class="stat-card">
+                <i class="ph-fill ph-trend-up" style="color: #00ff66; font-size: 2.5rem;"></i>
+                <div class="stat-info"><h4>Alta Produtividade</h4><p>Colaboradores focados no trabalho, livres de lentidão.</p></div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Edge TI. Todos os direitos reservados.</p>
-                <a href="centralPrivacidade">Política de Privacidade</a>
+            <div class="stat-card blue-card">
+                <i class="ph-fill ph-shield-check" style="color: #00a4ff; font-size: 2.5rem;"></i>
+                <div class="stat-info"><h4>Segurança Ativa</h4><p>Sistemas atualizados e livres de vulnerabilidades locais.</p></div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="js/menu.js"></script>
-    
-    <a href="https://wa.me/554891763985" class="whatsapp-float" target="_blank">
-        <i class="ph ph-whatsapp-logo"></i>
-    </a>
+  </main>
 
+  <!-- CTA -->
+  <section id="vamos-conversar" class="section cta-section-modern">
+    <div class="container cta-container-box">
+      <div class="cta-glow-backdrop"></div>
+      <div class="cta-content-wrapper">
+        <h2>Elimine as falhas de informática da sua empresa</h2>
+        <p>Quer saber como podemos otimizar o desempenho das suas estações de trabalho? Solicite um diagnóstico com a nossa equipe.</p>
+        <div class="cta-group-modern">
+            <a href="https://wa.me/554891763985?text=Olá!%20Gostaria%20de%20um%20diagnóstico%20para%20as%20máquinas%20da%20minha%20empresa." target="_blank" rel="noopener noreferrer" class="btn-modern-tech btn-wa-gradient"><span class="icon-wa"></span> Agendar Diagnóstico</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contato" class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column footer-about"><h3 class="footer-logo"><img src="/assets/images/LOGO FUNDO TRANSPARENTE.png" alt="logo Edge Ti"></h3><p>Sua parceira em soluções de tecnologia.</p></div>
+        <div class="footer-column footer-links"><h3>Links Rápidos</h3><ul><li><a href="/">Início</a></li><li><a href="/#servicos">Soluções</a></li><li><a href="/#vamos-conversar">Contato</a></li></ul></div>
+        <div class="footer-column footer-contact"><h3>Contato</h3><ul><li><span class="icon-footer icon-map"></span><span>Palhoça, SC</span></li><li><span class="icon-footer icon-phone"></span><span>(48) 9176-3985</span></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Edge TI.</p><a href="/central-privacidade">Política de Privacidade</a></div>
+    </div>
+  </footer>
 </body>
 </html>

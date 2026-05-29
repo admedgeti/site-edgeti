@@ -1,12 +1,23 @@
+Options -MultiViews
 RewriteEngine On
 
+# ==============================================================================
+# EXCEÇÃO PARA PASTAS COM MESMO NOME DE ARQUIVOS (Ex: /informatica)
+# ==============================================================================
+# Se o pedido for para uma pasta, mas existir o arquivo .html correspondente, abre o arquivo
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# ==============================================================================
+# SEU CÓDIGO ATUAL AJUSTADO
+# ==============================================================================
 # 1. REDIRECIONAMENTO EXTERNO: Transforma /post.html?slug=nome em /nome (Visível ao usuário)
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/post\.html\?slug=([^\s&]+) [NC]
 RewriteRule ^ /%1? [R=301,L]
 
-# 2. Se o arquivo ou pasta real existir, abre normalmente
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
+# 2. Se o arquivo real existir, abre normalmente (Removida a regra de pasta genérica daqui)
+RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
 # 3. Se for um arquivo .html (como contato), abre sem mostrar a extensão
