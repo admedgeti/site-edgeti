@@ -58,86 +58,11 @@
       .page-header-spacing h1 { font-size: 2.2rem; }
     }
   </style>
+  <script type="module" src="/assets/js/components/main-header.js" defer></script>
 </head>
 
 <body>
-  <header id="header">
-    <div class="header-main">
-        <div class="container header-flex">
-            <a href="/" class="logo">
-                <img src="/assets/images/LOGO FUNDO TRANSPARENTE.png" alt="Edgeti Logo" />
-            </a>
-            
-            <!-- MENU DESKTOP -->
-            <nav class="nav-desktop">
-                <ul class="nav-list">
-                    <li><a href="/">Home</a></li>
-                    
-                    <!-- Item com Mega Menu -->
-                    <li class="has-mega-menu">
-                        <a href="/#servicos">Soluções ▾</a>
-                        
-                        <!-- Painel do Mega Menu -->
-                        <div class="mega-menu">
-                            <div class="mega-menu-grid">
-                                <a href="/informatica" class="mega-menu-card">
-                                    <h4>Informática</h4>
-                                    <p>Suporte ágil e eficiente para o dia a dia da sua empresa.</p>
-                                </a>
-                                <a href="/redes" class="mega-menu-card">
-                                    <h4>Redes e Servidores</h4>
-                                    <p>A base sólida para a conectividade do seu negócio.</p>
-                                </a>
-                                <a href="/seguranca" class="mega-menu-card">
-                                    <h4>Segurança da Informação</h4>
-                                    <p>Protegendo seu ativo mais valioso: seus dados.</p>
-                                </a>
-                                <a href="/cloud" class="mega-menu-card">
-                                    <h4>Cloud (Nuvem)</h4>
-                                    <p>Flexibilidade e escalabilidade para o futuro do negócio.</p>
-                                </a>
-                                <a href="/suporte-tecnico" class="mega-menu-card highlight-card">
-                                    <h4>Suporte Técnico para Empresas</h4>
-                                    <p>Suporte de ponta a ponta, sem o custo de uma equipe interna.</p>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <li><a href="/blog" class="active">Blog</a></li>
-                    <li><a href="/#vamos-conversar">Contato</a></li>
-                    <li><a href="/central-privacidade">Central de Privacidade</a></li>
-                </ul>
-            </nav>
-            
-            <button id="btn-mobile" aria-label="Abrir Menu">
-                <i class="ph ph-list"></i>
-            </button>
-        </div>
-    </div>
-    <!-- MENU MOBILE -->
-    <div id="menu-mobile" class="menu-mobile-container">
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li class="mobile-has-submenu">
-                    <a href="/#servicos">Soluções</a>
-                    <!-- Submenu Mobile -->
-                    <ul class="mobile-submenu">
-                        <li><a href="/informatica">- Informática</a></li>
-                        <li><a href="/redes">- Redes e Servidores</a></li>
-                        <li><a href="/seguranca">- Segurança da Informação</a></li>
-                        <li><a href="/cloud">- Cloud (Nuvem)</a></li>
-                        <li><a href="/suporte-tecnico">- Suporte Técnico</a></li>
-                    </ul>
-                </li>
-                <li><a href="blog">Blog</a></li>
-                <li><a href="/#vamos-conversar">Contato</a></li>
-                <li><a href="central-privacidade">Central de Privacidade</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+  <main-header></main-header>
 
   <div class="breadcrumb"><a href="/">Início</a> <span>></span> <a href="/#servicos">Suporte Técnico</a> <span>></span> <strong style="color: #ffffff;">Suporte Presencial</strong></div>
 
