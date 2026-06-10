@@ -13,7 +13,7 @@ class MainHeader extends HTMLElement {
               <nav class="nav-desktop">
                   <ul class="nav-list">
                       <li><a href="/">Home</a></li>
-                      <li><a href="/quem-somos.html">Quem Somos</a></li>
+                      <li><a href="/quem-somos">Quem Somos</a></li>
                       
                       <!-- Item com Mega Menu -->
                       <li class="has-mega-menu">
@@ -63,7 +63,7 @@ class MainHeader extends HTMLElement {
           <nav>
               <ul>
                   <li><a href="/">Home</a></li>
-                  <li><a href="/quem-somos.html">Quem Somos</a></li>
+                  <li><a href="/quem-somos">Quem Somos</a></li>
                   <li class="mobile-has-submenu">
                       <a href="/#servicos">Soluções</a>
                       <!-- Submenu Mobile -->
