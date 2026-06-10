@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="/assets/css/form.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -225,23 +226,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </section>
 
 </div>
-    <section id="vamos-conversar" class="section cta-section-modern">
-        <div class="container cta-container-box">
-            <!-- Faixa interna decorativa de fundo opcional para profundidade -->
-            <div class="cta-glow-backdrop"></div>
+    
+    <section id="vamos-conversar" class="section contact-section-modern">
+        <div class="container contact-container-box">
+            <div class="contact-glow-backdrop"></div>
             
-            <div class="cta-content-wrapper">
-                <h2>Pronto para o Próximo Nível?</h2>
-                <p>Siga o nosso dia a dia e projetos no Instagram ou chame a nossa equipe diretamente no WhatsApp para alinhar um orçamento sob medida para o seu negócio.</p>
-                
-                <div class="cta-group-modern">
-                    <a href="https://wa.me/554891763985?text=Olá!%20Encontrei%20o%20site%20da%20EDGETI%20e%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="btn-modern-tech btn-wa-gradient">
-                        <span class="icon-wa"></span> Chamar no WhatsApp
-                    </a>
+            <div class="contact-grid">
+                <div class="contact-info-wrapper">
+                    <h2>Pronto para o Próximo Nível?</h2>
+                    <p>Fale com a nossa equipe para alinhar um orçamento sob medida para o seu negócio ou tirar dúvidas sobre nossas soluções de TI.</p>
+                    
+                    <div class="contact-direct-channels">
+                        <p class="channel-title">Se preferir, clique abaixo:</p>
+                        <a href="https://wa.me/554891763985?text=Olá!%20Encontrei%20o%20site%20da%20EDGETI%20e%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="btn-modern-tech btn-wa-gradient">
+                            <i class="ph ph-whatsapp-logo"></i> Chamar no WhatsApp
+                        </a>
+                        <a href="https://www.instagram.com/edge.ti/" target="_blank" rel="noopener noreferrer" class="btn-modern-tech btn-ig-outline">
+                            <i class="ph ph-instagram-logo"></i> Seguir no Instagram
+                        </a>
+                    </div>
+                </div>
 
-                    <a href="https://www.instagram.com/edge.ti/" target="_blank" rel="noopener noreferrer" class="btn-modern-tech btn-ig-outline">
-                        <span class="icon-ig"></span> Seguir no Instagram
-                    </a>
+                <div class="form-wrapper-box">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="web3forms-form">
+                        <input type="hidden" name="access_key" value="7b8d48b4-860e-42ea-a5c1-5670813a841a">
+                        
+                        <input type="hidden" name="subject" value="Novo Lead - Site Edge TI">
+                        <input type="hidden" name="from_name" value="Site Edge TI">
+                        <input type="checkbox" name="botcheck" class="honeypot" style="display: none;">
+
+                        <div class="form-group">
+                            <label for="form-name">Nome Completo</label>
+                            <input type="text" id="form-name" name="nome" placeholder="Ex: João Silva" required>
+                        </div>
+
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="form-email">E-mail Corporativo</label>
+                                <input type="email" id="form-email" name="email" placeholder="joao@empresa.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-phone">Telefone / WhatsApp</label>
+                                <input type="tel" id="form-phone" name="telefone" placeholder="(48) 99999-9999" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-service">Qual solução você precisa?</label>
+                            <select id="form-service" name="servico_interesse" required>
+                                <option value="" disabled selected>Selecione uma opção...</option>
+                                <option value="Suporte Técnico para Empresas">Suporte Técnico para Empresas</option>
+                                <option value="Infraestrutura de Redes e Servidores">Infraestrutura de Redes e Servidores</option>
+                                <option value="Segurança da Informação">Segurança da Informação</option>
+                                <option value="Soluções em Nuvem (Cloud)">Soluções em Nuvem (Cloud)</option>
+                                <option value="Outros / Não tenho certeza">Outros / Não tenho certeza</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message">Mensagem / Detalhes da sua necessidade</label>
+                            <textarea id="form-message" name="mensagem" rows="4" placeholder="Conte resumidamente como podemos ajudar a sua empresa..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit-form">
+                            Enviar Solicitação <i class="ph ph-paper-plane-right"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
