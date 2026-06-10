@@ -1,0 +1,197 @@
+/* ======================================================
+   ESTILIZAÇÃO MODERNA E IMPACTANTE DA SEÇÃO CTA
+   ====================================================== */
+
+/* Seção base limpa */
+.cta-section-modern {
+     /* Maior e com mais presença na rolagem */
+    background: #0d0e0e !important; /* Fundo escuro absoluto para contraste */
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Blinda a seção contra qualquer vazamento dos brilhos de fundo */
+}
+
+/* O Bloco Centralizado (Card Gigante) */
+.cta-container-box {
+    max-width: 1400px;
+    height: auto; /* CORRIGIDO: Removida a altura fixa de 600px que travava o scroll vertical */
+    min-height: 500px; /* Mantém o aspecto imponente no PC sem prender o conteúdo */
+    width: 100%;
+    background: radial-gradient(circle at top right, #1a1c1e 0%, #121314 100%);
+    padding: 6rem 4rem;
+    border-radius: 32px; /* Cantos arredondados super modernos */
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura do card */
+}
+
+/* Brilho azul tecnológico de fundo mascarado */
+.cta-glow-backdrop {
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(15, 98, 254, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cta-content-wrapper {
+    position: relative;
+    z-index: 2; /* Fica acima do brilho de fundo */
+    width: 100%;
+}
+
+/* Tipografia Imponente */
+.cta-container-box h2 {
+    font-size: 3.2rem !important; /* Título maior e muito mais chamativo */
+    font-weight: 800;
+    color: #ffffff !important;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.cta-container-box p {
+    font-size: 1.2rem !important;
+    color: #c1c7cd !important; /* Cinza claro suave confortável */
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto 3.5rem auto;
+}
+
+/* Alinhamento dos Novos Botões */
+.cta-group-modern {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Estrutura Base dos Botões Tech */
+.btn-modern-tech {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px; /* Formato pílula moderno */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    min-width: 260px;
+    box-sizing: border-box;
+}
+
+/* BOTÃO 1: WhatsApp com Gradiente Atômico (Chama muita atenção) */
+.btn-wa-gradient {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}
+
+.btn-wa-gradient:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+    filter: brightness(1.1);
+}
+
+/* BOTÃO 2: Instagram com Borda de Alta Fidelidade (Visual Outline Elegante) */
+.btn-ig-outline {
+    background: rgba(255, 255, 255, 0.03);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Quando passa o mouse no BOTÃO, altera o fundo para branco e o texto para preto */
+.btn-ig-outline:hover {
+    transform: translateY(-4px);
+    background: #ffffff;
+    color: #000000 !important; 
+    border-color: #ffffff;
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* REGRA CORRIGIDA: Transforma o SVG branco em preto absoluto no hover */
+.btn-ig-outline:hover .icon-ig {
+    filter: brightness(0); 
+}
+
+/* --- Ícones SVG embutidos nativos --- */
+.icon-wa, .icon-ig {
+    width: 22px;
+    height: 22px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    transition: filter 0.3s ease;
+}
+
+/* WhatsApp usa ícone branco por padrão */
+.icon-wa {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23ffffff' d='M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z'/%3E%3C/svg%3E");
+}
+
+/* Instagram usa ícone branco por padrão */
+.icon-ig {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23ffffff' d='M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z'/%3E%3C/svg%3E");
+}
+
+/* ======================================================
+   RESPONSIVIDADE CRÍTICA DO CTA (ANTI-TRAVAMENTO)
+   ====================================================== */
+@media (max-width: 992px) {
+    .cta-section-modern {
+        padding: 4rem 1rem !important; /* Diminui o respiro externo no mobile */
+    }
+
+    .cta-container-box {
+        /* Reduz os paddings para que o conteúdo caiba perfeitamente na tela */
+        padding: 4rem 1.5rem !important; 
+        border-radius: 24px !important;
+        height: auto !important; /* Garante dinamismo de altura */
+        min-height: unset !important;
+        
+        /* MUDANÇA ABSOLUTA: auto força o card a respeitar as bordas sem vazar */
+        width: auto !important; 
+        margin-left: 0.2rem !important;
+        margin-right: 0.2rem !important;
+    }
+
+    .cta-container-box h2 {
+        font-size: 2.2rem !important; /* Reduz tamanho do texto para telas médias */
+    }
+    
+    .cta-container-box p {
+        font-size: 1.1rem !important;
+        margin-bottom: 2.5rem auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .cta-container-box h2 {
+        font-size: 1.9rem !important; /* Título perfeitamente legível no celular */
+    }
+
+    /* Ajusta os botões para empilharem sem ultrapassar os limites do card */
+    .cta-group-modern {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+
+    .btn-modern-tech {
+        width: 100% !important;
+        min-width: unset !important;
+        padding: 1.1rem 1.5rem !important;
+    }
+}
