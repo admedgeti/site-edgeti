@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | Blog Edge TI</title>
+  
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- Seus Web Components -->
+  <script type="module" src="/assets/js/components/main-header.js" defer></script>
+  <script type="module" src="/assets/js/components/main-footer.js" defer></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box !important; }
+    body { background-color: #08090a; color: #f1f5f9; font-family: system-ui, -apple-system, sans-serif; margin: 0; }
+    
+    /* Garante que o menu fique acima de tudo */
+    main-header { display: block; position: relative; z-index: 9999; }
+
+    .blog-post-container { max-width: 840px; margin: 3rem auto 6rem auto; padding: 0 1.5rem; }
+    
+    /* Novo Banner do Post (Hero) */
+    .post-hero {
+      position: relative;
+      padding: 6rem 2rem;
+      text-align: center;
+      border-radius: 24px;
+      margin-bottom: 4rem;
+      background-color: #121416;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 40px rgba(0,0,0, 0.3);
+    }
+
+    /* Película escura sobre a imagem para garantir a leitura do título */
+    .post-hero-overlay {
+      position: absolute;
+      margin: 5px;
+      border-radius: 20px;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(8, 9, 10, 0.5), rgba(8, 9, 10, 0.95));
+      z-index: 1;
+      
+    }
+
+    .post-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .post-meta { display: inline-block; background: rgba(0, 164, 255, 0.15); border: 1px solid rgba(0, 164, 255, 0.3); color: #00a4ff; padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; }
+    
+    .post-hero-content h1 { font-size: 3rem; color: #ffffff; letter-spacing: -1px; margin-bottom: 1.5rem; line-height: 1.2; font-weight: 800; }
+    .post-date { color: #94a3b8; font-size: 1rem; font-weight: 500; }
+    
+    /* Estilização do conteúdo Markdown renderizado */
+    .post-content { line-height: 1.8; font-size: 1.15rem; color: #cbd5e1; }
+    .post-content h2 { color: #ffffff; font-size: 1.8rem; margin-top: 3rem; margin-bottom: 1.2rem; letter-spacing: -0.5px; }
+    .post-content h3 { color: #e2e8f0; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem; }
+    .post-content p { margin-bottom: 1.5rem; }
+    
+    /* Correção para listas e links do Markdown */
+    .post-content ul, .post-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
+    .post-content li { margin-bottom: 0.8rem; color: #cbd5e1; }
+    .post-content a { color: #00a4ff; text-decoration: none; border-bottom: 1px solid rgba(0, 164, 255, 0.4); transition: all 0.3s ease; }
+    .post-content a:hover { color: #00ff66; border-color: #00ff66; }
+
+    @media (max-width: 768px) {
+      .post-hero { padding: 4rem 1.5rem; border-radius: 16px; }
+      .post-hero-content h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <main-header></main-header>
+
+  <article class="blog-post-container">
+    
+    <!-- Renderiza o Banner com a imagem de fundo SE ela existir no Markdown -->
+    <header class="post-hero" {% if image %}style="background-image: url('{{ image }}');"{% endif %}>
+      <div class="post-hero-overlay"></div>
+      
+      <div class="post-hero-content">
+        <span class="post-meta">{{ category }}</span>
+        <h1>{{ title }}</h1>
+        <div class="post-date">
+          <i class="ph ph-calendar-blank" style="vertical-align: middle;"></i> 
+          Publicado em {{ date.toLocaleDateString('pt-BR') }}
+        </div>
+      </div>
+    </header>
+
+    <div class="post-content">
+      {{ content | safe }}
+    </div>
+  </article>
+
+  <main-footer></main-footer>
+
+</body>
+</html>
