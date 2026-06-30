@@ -1,6 +1,7 @@
 // .eleventy.js
 module.exports = function(eleventyCc) {
   // Copia as pastas de assets direto para a pasta de saída sem alterar nada
+  eleventyCc.addPassthroughCopy("CNAME");
   eleventyCc.addPassthroughCopy("assets");
   eleventyCc.addPassthroughCopy("servicos");
   eleventyCc.addPassthroughCopy("cidades");
